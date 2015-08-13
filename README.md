@@ -1,6 +1,7 @@
 # Tinder for Temp Recruiting (name TBC)
 
 * [Week plan](#week-plan)
+* [Technologies] (#technologies)
 * [Features](#features)
   * [Jobseeker Side](#jobseeker-side)
   * [Employer Side](#employer-side)
@@ -40,6 +41,15 @@
 
 #### Day 11-12
   * Practice demos
+
+
+## Technologies
+ * Rails API
+ * PSQL
+ * Angular
+ * Ionic
+ * Protractor
+ * Airborne
 
 ## Features
 
