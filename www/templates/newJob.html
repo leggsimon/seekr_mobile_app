@@ -5,6 +5,31 @@
   </ion-nav-buttons>
 
   <ion-content class="padding">
-    <a class="button" ui-sref="jobs">Submit</a>
+    <form ng-submit="newJob()" class="list">
+      <label class="item item-input">
+        <input type="text" placeholder="Job Title" id="jobTitle">
+      </label>
+      <label class="item item-input">
+        <textarea placeholder="Job Description" id="jobDescription"></textarea>
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Start Date" id="startDate">
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="End Date" id="endDate">
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Location" id="location">
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Wage" id="wage">
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Required Skills" id="requiredSkills">
+      </label>
+      <button type="submit" id="submit" class="button button-positive button-block">Add Job</button>
+    </form>
+
+
   </ion-content>
 </ion-view>

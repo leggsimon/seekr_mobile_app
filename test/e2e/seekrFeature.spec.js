@@ -2,6 +2,16 @@ describe('Seekr', function() {
 
   var addJobButton = element(by.id('addJob'));
 
+  var jobTitleForm = element(by.id('jobTitle'));
+  var jobDescriptionForm = element(by.id('jobDescription'));
+  var startDateForm = element(by.id('startDate'));
+  var endDateForm = element(by.id('endDate'));
+  var locationForm = element(by.id('location'));
+  var wageForm = element(by.id('wage'));
+  var requiredSkillsForm = element(by.id('requiredSkills'));
+
+  var submitButton = element(by.id('submit'));
+
 
   beforeEach(function() {
     browser.get('http://localhost:8100');
@@ -14,6 +24,21 @@ describe('Seekr', function() {
   it("has an 'add job' button", function() {
     addJobButton.click();
     expect(browser.getCurrentUrl()).toContain('/jobs/new');
+  });
+
+  it("allows jobs to be created", function() {
+    addJobButton.click();
+    jobTitleForm.sendKeys('nandos chef');
+    jobDescriptionForm.sendKeys('cooking chicken that is extra cheeky');
+    startDateForm.sendKeys('16/9/2015');
+    endDateForm.sendKeys('1/10/2015');
+    locationForm.sendKeys('London');
+    wageForm.sendKeys('10 pounds an hour');
+    requiredSkillsForm.sendKeys('cooking');
+    submitButton.click();
+    expect(browser.getCurrentUrl()).toContain('/jobs');
+    var jobs = element.all(by.repeater('job in jobs'));
+    expect(jobs.first().getText()).toContain('nandos chef');
   });
 
   // it('displays job-seekers', function() {
