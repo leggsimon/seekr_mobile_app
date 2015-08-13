@@ -1,5 +1,18 @@
 <ion-view title="Jobs" hide-back-button="true">
+
+
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="job in jobs">
+        {{ job.title }}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+
+
   <ion-content class="padding">
     <a id="addJob" class="button" ui-sref="newJob">Add New Job</a>
   </ion-content>
+
+
 </ion-view>

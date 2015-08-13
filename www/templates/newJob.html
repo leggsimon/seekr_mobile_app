@@ -7,27 +7,30 @@
   <ion-content class="padding">
     <form ng-submit="newJob()" class="list">
       <label class="item item-input">
-        <input type="text" placeholder="Job Title" id="jobTitle">
+        <input type="text" placeholder="Job Title" ng-model="jobTitle">
       </label>
       <label class="item item-input">
-        <textarea placeholder="Job Description" id="jobDescription"></textarea>
+        <textarea placeholder="Job Description" ng-model="jobDescription"></textarea>
       </label>
       <label class="item item-input">
-        <input type="text" placeholder="Start Date" id="startDate">
+        <input type="text" placeholder="Start Date" ng-model="startDate">
       </label>
       <label class="item item-input">
-        <input type="text" placeholder="End Date" id="endDate">
+        <input type="text" placeholder="Duration" ng-model="duration">
       </label>
       <label class="item item-input">
-        <input type="text" placeholder="Location" id="location">
+        <input type="text" placeholder="Hours" ng-model="hours">
       </label>
       <label class="item item-input">
-        <input type="text" placeholder="Wage" id="wage">
+        <input type="text" placeholder="Location" ng-model="location">
       </label>
       <label class="item item-input">
-        <input type="text" placeholder="Required Skills" id="requiredSkills">
+        <input type="text" placeholder="Wage" ng-model="wage">
       </label>
-      <button type="submit" id="submit" class="button button-positive button-block">Add Job</button>
+      <label class="item item-input">
+        <input type="text" placeholder="Required Skills" ng-model="requiredSkills">
+      </label>
+      <button type="submit" ng-click="newJob()" class="button button-positive button-block">Add Job</button>
     </form>
 
 

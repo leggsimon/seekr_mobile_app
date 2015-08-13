@@ -5,7 +5,7 @@ describe('Seekr', function() {
   var jobTitleForm = element(by.id('jobTitle'));
   var jobDescriptionForm = element(by.id('jobDescription'));
   var startDateForm = element(by.id('startDate'));
-  var endDateForm = element(by.id('endDate'));
+  var durationForm = element(by.id('duration'));
   var locationForm = element(by.id('location'));
   var wageForm = element(by.id('wage'));
   var requiredSkillsForm = element(by.id('requiredSkills'));
@@ -31,12 +31,12 @@ describe('Seekr', function() {
     jobTitleForm.sendKeys('nandos chef');
     jobDescriptionForm.sendKeys('cooking chicken that is extra cheeky');
     startDateForm.sendKeys('16/9/2015');
-    endDateForm.sendKeys('1/10/2015');
+    durationForm.sendKeys('3 months');
     locationForm.sendKeys('London');
     wageForm.sendKeys('10 pounds an hour');
     requiredSkillsForm.sendKeys('cooking');
     submitButton.click();
-    expect(browser.getCurrentUrl()).toContain('/jobs');
+    expect(browser.getCurrentUrl()).toBe('http://localhost:8100/#/jobs');
     var jobs = element.all(by.repeater('job in jobs'));
     expect(jobs.first().getText()).toContain('nandos chef');
   });
