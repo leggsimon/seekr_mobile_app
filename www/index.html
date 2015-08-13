@@ -28,13 +28,34 @@
       <ion-header-bar class="bar-stable">
         <h1 class="title">Seekr</h1>
       </ion-header-bar>
-      <ion-content>
+
+      <ion-nav-bar class="bar-dark">
+        <ion-nav-back-button>
+        </ion-nav-back-button>
+      </ion-nav-bar>
+
+
+      <ion-nav-view></ion-nav-view>
+
+
+
+    <script id="page3.html" type="text/ng-template">
+      <ion-view title="Page 3">
+        <ion-content class="padding">
+          <a class="button" ui-sref="page1">Go To Page 1</a>
+          <a class="button" ui-sref="page2">Go To Page 2</a>
+        </ion-content>
+      </ion-view>
+    </script>
+
+
+      <!-- <ion-content>
         <ion-list>
           <ion-item ng-repeat="jobseeker in jobseekers">
             {{ jobseeker.name }}
           </ion-item>
         </ion-list>
-      </ion-content>
+      </ion-content> -->
     </ion-pane>
   </body>
 </html>

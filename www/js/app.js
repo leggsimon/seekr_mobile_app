@@ -17,3 +17,17 @@ seekr.run(function($ionicPlatform) {
     }
   });
 });
+
+seekr.config(function ($stateProvider, $urlRouterProvider) {
+
+  $stateProvider.state('jobs', {
+      url: '/jobs',
+      templateUrl: 'templates/jobs.html'
+    });
+  $stateProvider.state('newJob', {
+      url: '/jobs/new',
+      templateUrl: 'templates/newJob.html'
+    });
+
+  $urlRouterProvider.otherwise('jobs');
+});
