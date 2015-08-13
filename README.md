@@ -1,7 +1,7 @@
 # Tinder for Temp Recruiting (name TBC)
 
 * [Week plan](#week-plan)
-* [Technologies] (#technologies)
+* [Technologies](#technologies)
 * [Features](#features)
   * [Jobseeker Side](#jobseeker-side)
   * [Employer Side](#employer-side)
