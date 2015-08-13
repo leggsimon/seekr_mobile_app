@@ -5,7 +5,7 @@
   </ion-nav-buttons>
 
   <ion-content class="padding">
-    <form ng-submit="newJob()" class="list">
+    <form ng-submit="newJob()" class="list" ng-controller="jobSeekerCtrl">
       <label class="item item-input">
         <input type="text" placeholder="Job Title" ng-model="jobTitle">
       </label>
@@ -30,9 +30,8 @@
       <label class="item item-input">
         <input type="text" placeholder="Required Skills" ng-model="requiredSkills">
       </label>
-      <button type="submit" ng-click="newJob()" class="button button-positive button-block">Add Job</button>
+      <button id="addJobSubmit" type="submit" class="button button-positive button-block">Add Job</button>
     </form>
-
 
   </ion-content>
 </ion-view>
