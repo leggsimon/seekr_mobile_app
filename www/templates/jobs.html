@@ -10,18 +10,15 @@
       <ion-item ng-repeat="job in jobs">
         <div class="list card">
 
-          <div class="item item-avatar">
+          <a class="item item-avatar" ui-sref="jobInfo({id: {{ job.id }} })">
             <!-- <img ng-src="{{ company.avatar }}">          put company logo here -->
             <h2>{{job.title}}</h2>
             <p>{{job.description}}</p>
-          </div>
+          </a>
           <!-- <div class="item item-image">                  mabye location here
             <img src="cover.jpg">
           </div> -->
-          <a class="item item-icon-left assertive" href="#">
-            <p>{{ job.start_date }}</p>
-            <p>{{ job.wage | currency:"£" }}/hour</p>
-          </a>
+
         </div>
       </ion-item>
     </ion-list>

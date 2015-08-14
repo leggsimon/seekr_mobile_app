@@ -1,4 +1,4 @@
-seekr.controller('jobsCtrl', function($scope, $http, $location) {
+seekr.controller('jobsCtrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
 
   var url = 'http://tranquil-peak-9751.herokuapp.com/api';
 
@@ -30,4 +30,4 @@ seekr.controller('jobsCtrl', function($scope, $http, $location) {
 
 
 
-});
+}]);
