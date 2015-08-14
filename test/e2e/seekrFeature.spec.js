@@ -22,13 +22,7 @@ describe('Seekr', function() {
     var requiredSkillsForm = element(by.model('requiredSkills'));
     var submitButton = element(by.id('addJobSubmit'));
 
-    it("has an 'add job' button", function() {
-      addJobButton.click();
-      expect(browser.getCurrentUrl()).toContain('/jobs/new');
-    });
-
-    it("allows jobs to be created and is viewed on /jobs", function() {
-      addJobButton.click();
+    var fillInJobFieldsHelper = function() {
       jobTitleForm.sendKeys('nandos chef');
       jobDescriptionForm.sendKeys('cooking chicken that is extra cheeky');
       startDateForm.sendKeys('16/9/2015');
@@ -37,6 +31,16 @@ describe('Seekr', function() {
       locationForm.sendKeys('London');
       wageForm.sendKeys('10 pounds an hour');
       requiredSkillsForm.sendKeys('cooking');
+    };
+
+    it("has an 'add job' button", function() {
+      addJobButton.click();
+      expect(browser.getCurrentUrl()).toContain('/jobs/new');
+    });
+
+    it("allows jobs to be created and is viewed on /jobs", function() {
+      addJobButton.click();
+      fillInJobFieldsHelper();
       submitButton.click();
       expect(browser.getCurrentUrl()).toBe('http://localhost:8100/#/jobs');
       var jobs = element.all(by.repeater('job in jobs'));
