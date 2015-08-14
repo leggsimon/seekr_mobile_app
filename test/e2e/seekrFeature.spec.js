@@ -1,5 +1,8 @@
 describe('Seekr', function() {
 
+  var jobs = element.all(by.repeater('job in jobs'));
+
+
   beforeEach(function() {
     browser.get('http://localhost:8100');
   });
@@ -41,8 +44,14 @@ describe('Seekr', function() {
       fillInJobFieldsHelper();
       submitButton.click();
       expect(browser.getCurrentUrl()).toBe('http://localhost:8100/#/jobs');
-      var jobs = element.all(by.repeater('job in jobs'));
       expect(jobs.last().getText()).toContain('nandos chef');
+    });
+  });
+
+  describe('Viewing more info on a job', function () {
+    it("shows a job's extra information", function () {
+      jobs.last().click();
+      expect(browser.getTitle()).toEqual('More Info');
     });
   });
 
