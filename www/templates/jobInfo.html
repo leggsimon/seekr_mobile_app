@@ -2,12 +2,16 @@
   <ion-content>
     <ion-list>
       <ion-item>
+
         <h1>{{ jobInfo.title }}</h1>
         <b><i>{{ jobInfo.description}}</i></b>
         <p><b>Location:</b> {{ jobInfo.location }}</p>
         <p><b>Start Date:</b> {{ jobInfo.start_date | date:"EEE dd/MM/yyyy" }} for {{ jobInfo.duration }}</p>
         <p><b>Hours:</b> {{ jobInfo.hours }}</p>
         <p><b>Wage:</b> {{ jobInfo.wage | currency:"£" }}</p>
+
+        <button id="viewCandidates" class="button button-block button-positive padding" ui-sref="jobCandidates">View Candidates</button>
+
       </ion-item>
     </ion-list>
   </ion-content>
