@@ -11,26 +11,24 @@ describe('Seekr', function() {
   describe('Creating jobs', function () {
 
     var addJobButton = element(by.id('addJob'));
-
-    var jobTitleForm = element(by.model('jobTitle'));
-    var jobDescriptionForm = element(by.model('jobDescription'));
-    var startDateForm = element(by.model('startDate'));
-    var durationForm = element(by.model('duration'));
-    var hoursForm = element(by.model('hours'));
-    var locationForm = element(by.model('location'));
-    var wageForm = element(by.model('wage'));
-    var requiredSkillsForm = element(by.model('requiredSkills'));
     var submitButton = element(by.id('addJobSubmit'));
+    var jobFieldValues = {
+      'jobTitle': 'nandos chef',
+      'jobDescription': 'cooking chicken that is extra cheeky',
+      'startDate': '16/9/2015',
+      'duration': '3 months',
+      'hours': '40',
+      'location': 'London',
+      'wage': '10 pounds an hour',
+      'requiredSkills': 'cooking'
+    };
 
     var fillInJobFieldsHelper = function() {
-      jobTitleForm.sendKeys('nandos chef');
-      jobDescriptionForm.sendKeys('cooking chicken that is extra cheeky');
-      startDateForm.sendKeys('16/9/2015');
-      durationForm.sendKeys('3 months');
-      hoursForm.sendKeys('40');
-      locationForm.sendKeys('London');
-      wageForm.sendKeys('10 pounds an hour');
-      requiredSkillsForm.sendKeys('cooking');
+      for (var inputField in jobFieldValues) {
+        if (jobFieldValues.hasOwnProperty(inputField)) {
+          element(by.model(inputField)).sendKeys(jobFieldValues[inputField]);
+        }
+      }
     };
 
     it("has an 'add job' button", function() {
