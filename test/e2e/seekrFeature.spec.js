@@ -40,7 +40,7 @@ describe('Seekr', function() {
     submitButton.click();
     expect(browser.getCurrentUrl()).toBe('http://localhost:8100/#/jobs');
     var jobs = element.all(by.repeater('job in jobs'));
-    expect(jobs.getText()).toContain('nandos chef');
+    expect(jobs.last().getText()).toContain('nandos chef');
   });
 
   // it('displays job-seekers', function() {
