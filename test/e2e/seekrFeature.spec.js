@@ -12,7 +12,7 @@ describe('Seekr', function() {
   });
 
   describe('Creating jobs', function () {
-
+  
     var addJobButton = element(by.id('addJob'));
     var submitButton = element(by.id('addJobSubmit'));
     var jobFieldValues = {
@@ -22,7 +22,7 @@ describe('Seekr', function() {
       'duration': '3 months',
       'hours': '40',
       'location': 'London',
-      'wage': '10 pounds an hour',
+      'wage': '10',
       'requiredSkills': 'cooking'
     };
 
@@ -48,18 +48,21 @@ describe('Seekr', function() {
     });
   });
 
-  describe('Viewing more info on a job', function () {
+  describe('Viewing more info on a job', function() {
     it("shows a job's extra information", function () {
       jobs.last().click();
       expect(browser.getTitle()).toEqual('More Info');
     });
   });
 
-
-
-  // it('displays job-seekers', function() {
-  //   var jobseekers = element.all(by.repeater('jobseeker in jobseekers'));
-  //   expect(jobseekers.first().getText()).toEqual('Paul');
-  // });
+  describe('Viewing candidates', function() {
+    it('displays job-seekers', function() {
+      jobs.last().click();
+      element(by.id('viewCandidates')).click();
+      var jobseekers = element.all(by.repeater('jobseeker in jobseekers'));
+      expect(browser.getTitle()).toEqual('Candidates');
+      expect(jobseekers.first().getText()).toEqual('Paul');
+    });
+  });
 
 });

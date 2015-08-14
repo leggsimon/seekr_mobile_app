@@ -1,0 +1,19 @@
+<ion-view title="Candidates" ng-controller="jobCandidatesCtrl">
+  <ion-content overflow-scroll="true" has-bouncing="true">
+    <ion-list>
+      <ion-item ng-repeat="jobseeker in jobseekers">
+        <div class="list card">
+
+          <div class="item item-avatar">
+            <!-- <img ng-src="{{ company.avatar }}">          put company logo here -->
+            <h2>{{jobseeker.name}}</h2>
+          </div>
+          <!-- <div class="item item-image">                  mabye location here
+            <img src="cover.jpg">
+          </div> -->
+
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
