@@ -1,4 +1,4 @@
-# Tinder for Temp Recruiting (name TBC)
+# Seekr
 
 * [Week plan](#week-plan)
 * [Technologies](#technologies)
@@ -14,7 +14,7 @@
 #### Day 1-3
   * Planning
   * Research
-  * Waffle
+  * Trello
   * What technologies?
   * Prototype - not testing is ok, destroy it at the end
   * Cutting features
@@ -28,10 +28,10 @@
   * Deploy!
 
 #### Day 5
-  * Retrospective
+  * Retrospective, finished mvp 1
 
 #### Day 6-7
-  * Weekend, work if you want to?
+  * Weekend, individual work to get started on rest of the features, remote pairing
 
 #### Day 8
   * Sprint kickoff, meeting to look at existing tickets
@@ -40,7 +40,7 @@
   * Feature freeze
 
 #### Day 11-12
-  * Practice demos
+  * Practice demos, polish off project, and practice for presentation
 
 
 ## Technologies
@@ -49,7 +49,7 @@
  * Angular
  * Ionic
  * Protractor
- * Airborne
+ * Rack test
 
 ## Features
 
@@ -90,13 +90,21 @@
 #### MVP 1
 
 ```
-When I access the app,
-I want to view all job-seekers,
-so I can see available job-seekers for my position.
+When I open the app (as an employer),
+I want to be able to see my list of jobs,
+so that I can keep track of all the positions I am trying to fill.
 
-When viewing the job-seekers,
-I want to swipe left or right,
-so I can view multiple job seekers.
+When I open the app (as an employer),
+I want to be able to add a new job to my job list,
+so that I can find a candidate if I need a job completed.
+
+When I open the app (as an employer),
+I want to be able to click on one of my jobs,
+so that I can see more information about that job.
+
+When I open the app (as an employer),
+I want to be able to click on a job,
+so that I can see all job-seekers for the position.
 ```
 
 #### MVP 2
@@ -106,19 +114,47 @@ When I visit the homepage,
 I want to sign up as an employer,
 so I can view job-seekers.
 
-When I sign up,
-I want to add information about my company,
-so that job-seekers know what we do.
+When I visit the homepage,
+I want to sign up as an job-seeker,
+so that I can begin to get job offers.
 
-When I'm signed in,
-I want to view job-seekers looking for work,
-so that I can pick a suitable candidate to employee.
+When signed in as an employer,
+I want to swipe left or right on job-seekers,
+so that I can find the best candidate.
 
-When I'm viewing job-seekers,
-I want to be able to dismiss a job-seeker I have no interest in,
-to narrow down to only the suitable candidates.
+When signed in as an employer,
+I want to delete or edit a job of mine,
+to adjust the job as need be.
 
-When I'm viewing job-seekers,
-I want to be able to accept a job-seeker,
-so that we can begin communicating about a position.
+When signed in as an employer,
+I want to be able to discard job-seekers I do not feel are right for the job,
+so that I do not have to see them again for that job when swiping.
+
+When signed in as an employer,
+I want to be able to save a job-seeker for later,
+so that I do not have to discard or hire right away.
+
+When signed in as an employer,
+I want to be able to give out 3 offers for one job,
+so that I can get that job filled quickly.
+
+When signed in as an employer,
+I want to be able to endorse a job-seeker that has worked for me,
+so that I can tell other employers if he did a good job.
+
+When signed in as a job-seeker,
+I want to be able to add skills I have,
+so that employers can see what I am good at.
+
+When signed in as a job-seeker,
+I want to get a notification if I have been offered a job,
+so that I can make some money.
+
+When signed in as a job-seeker,
+I want to be able to see more information about a job I am offered,
+so I can decide to accept or decline.
+
+When signed in as a job-seeker,
+I want to be able to be endorsed by a company I have worked for,
+so that future employers can see my skills.
 ```
