@@ -42,7 +42,6 @@ describe('Seekr', function() {
     it("allows job fields to be filled in", function() {
       addJobButton.click();
       fillInJobFieldsHelper();
-      // expect(element(by.model('jobTitle'))).toContain('nandos chef');
       expect(browser.getTitle()).toEqual('newJob');
     });
 
