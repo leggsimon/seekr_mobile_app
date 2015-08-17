@@ -1,4 +1,4 @@
-<ion-view title="Jobseeker Sign Up">
+<ion-view title="Jobseeker Sign In">
   <ion-nav-buttons side="left">
   </ion-nav-buttons>
   <ion-nav-buttons side="right">
@@ -7,19 +7,12 @@
   <ion-content class="padding">
     <form ng-submit="jobseekerSignUp()" class="list">
       <label class="item item-input">
-        <input type="text" placeholder="Name" ng-model="jobseekerName" required>
-      </label>
-      <label class="item item-input">
         <input type="email" placeholder="Email" ng-model="jobseekerEmail" required>
       </label>
       <label class="item item-input">
         <input type="password" placeholder="Password" ng-model="jobseekerPassword" required>
       </label>
-      <label class="item item-input">
-        <input type="text" placeholder="Location" ng-model="jobseekerLocation" required>
-      </label>
-
-      <button id="jobseekerSignUpSubmit" type="submit" class="button button-positive button-block" ui-sref="home">Sign Up as a Jobseeker</button>
+      <button id="jobseekerSignUpSubmit" type="submit" class="button button-positive button-block" ui-sref="jobseekerHome">Sign in as a Jobseeker</button>
     </form>
   </ion-content>
 </ion-view>
