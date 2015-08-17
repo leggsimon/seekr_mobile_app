@@ -43,37 +43,23 @@ describe('Seekr', function() {
 
   describe('Users', function () {
 
-    var employerSignUpValues = {
-      'employerEmail': 'example@nandos.com',
-      'employerPassword': 'cheeky123',
-      'employerName': 'Nandos',
-      'employerDescription': 'Selling extra cheeky chicken.',
-      'employerIndustry': 'Food',
-      'employerWebsite': 'http://www.nandos.co.uk/'
-    };
-
-    var fillInEmployerSignUpHelper = function() {
-      for (var inputField in employerSignUpValues) {
-        if (employerSignUpValues.hasOwnProperty(inputField)) {
-          element(by.model(inputField)).sendKeys(employerSignUpValues[inputField]);
-        }
-      }
-    };
-
-    it('can signup as a jobseeker', function () {
+    it('takes you to the jobseeker signup page', function () {
       element(by.id('jobseekerSignUp')).click();
-      element(by.model('jobseekerName')).sendKeys('Mr Cheeky');
-      element(by.model('jobseekerEmail')).sendKeys('example@nandos.com');
-      element(by.model('jobseekerPassword')).sendKeys('cheeky123');
-      element(by.model('jobseekerLocation')).sendKeys('cheeky town');
-      element(by.id('jobseekerSignUp')).click();
-      expect(browser.getTitle()).toEqual("Welcome Mr Cheeky");
+      element(by.id('jobseekerSignUpSubmit')).click();
+      expect(browser.getTitle()).toEqual("Home");
+    });
 
-    it('can signup as an employer', function () {
+    it('takes you to the employer signup page', function () {
       element(by.id('employerSignUp')).click();
-      fillInEmployerSignUpHelper();
       element(by.id('employerSignUpSubmit')).click();
-      expect(browser.getCurrentUrl()).toContain('/jobs');
+      expect(browser.getTitle()).toEqual("Home");
+    });
+
+    it('can sign in', function() {
+      element(by.id('signIn')).click();
+      element(by.model('email')).sendKeys('jack@seeker.com');
+      element(by.model('password')).sendKeys('12345');
+      expect(browser.getTitle()).toEqual('Welcome Jack');
     });
 
   });

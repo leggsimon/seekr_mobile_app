@@ -5,7 +5,7 @@
   </ion-nav-buttons>
 
   <ion-content class="padding">
-    <form ng-submit="jobseekerSignUp()" class="list" ng-controller="signUpCtrl">
+    <form ng-submit="jobseekerSignUp()" class="list">
       <label class="item item-input">
         <input type="text" placeholder="Name" ng-model="jobseekerName" required>
       </label>
@@ -19,7 +19,7 @@
         <input type="text" placeholder="Location" ng-model="jobseekerLocation" required>
       </label>
 
-      <button id="jobseekerSignUP" type="submit" class="button button-positive button-block">Sign Up as a Jobseeker</button>
+      <button id="jobseekerSignUpSubmit" type="submit" class="button button-positive button-block" ui-sref="home">Sign Up as a Jobseeker</button>
     </form>
   </ion-content>
 </ion-view>
