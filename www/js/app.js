@@ -25,9 +25,14 @@ seekr.config(function ($stateProvider, $urlRouterProvider) {
     templateUrl: 'templates/home.html'
   });
 
-  $stateProvider.state('signUp', {
-    url: '/signup',
-    templateUrl: 'templates/signUp.html'
+  $stateProvider.state('employerSignUp', {
+    url: '/employersignup',
+    templateUrl: 'templates/employerSignUp.html'
+  });
+
+  $stateProvider.state('jobseekerSignUp', {
+    url: '/jobseekersignup',
+    templateUrl: 'templates/jobseekerSignUp.html'
   });
 
   $stateProvider.state('jobs', {

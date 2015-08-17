@@ -72,59 +72,59 @@ describe('Seekr', function() {
     });
   });
 
-  describe('Creating jobs', function() {
-
-    var addJobButton = element(by.id('addJob'));
-    var submitButton = element(by.id('addJobSubmit'));
-    var jobFieldValues = {
-      'jobTitle': 'nandos chef',
-      'jobDescription': 'cooking chicken that is extra cheeky',
-      'startDate': '16/9/2015',
-      'duration': '3 months',
-      'hours': '40',
-      'location': 'London',
-      'wage': '10',
-      'requiredSkills': 'cooking'
-    };
-
-    var fillInJobFieldsHelper = function() {
-      for (var inputField in jobFieldValues) {
-        if (jobFieldValues.hasOwnProperty(inputField)) {
-          element(by.model(inputField)).sendKeys(jobFieldValues[inputField]);
-        }
-      }
-    };
-
-    it("has an 'add job' button", function() {
-      addJobButton.click();
-      expect(browser.getCurrentUrl()).toContain('/job/new');
-    });
-
-    it("allows jobs to be created and is viewed on /jobs", function() {
-      addJobButton.click();
-      fillInJobFieldsHelper();
-      submitButton.click();
-      expect(mock.requestsMade()).toEqual([ { method : 'GET', url : 'http://tranquil-peak-9751.herokuapp.com/api/jobs' }, { method : 'GET', url : 'http://tranquil-peak-9751.herokuapp.com/api/jobs' }, { data : { duration : '3 months', hours : '40', description : 'cooking chicken that is extra cheeky', location : 'London', title : 'nandos chef', start_date : '16/9/2015', wage : '10' }, method : 'POST', url : 'http://tranquil-peak-9751.herokuapp.com/api/jobs' } ]);
-      expect(browser.getCurrentUrl()).toBe('http://localhost:8100/#/jobs');
-      expect(jobs.last().getText()).toContain('nandos chef');
-    });
-  });
-
-  describe('Viewing more info on a job', function() {
-    it("shows a job's extra information", function() {
-      jobs.last().click();
-      expect(browser.getTitle()).toEqual('More Info');
-    });
-  });
-
-  describe('Viewing candidates', function() {
-    it('displays job-seekers', function() {
-      jobs.last().click();
-      element(by.id('viewCandidates')).click();
-      var jobseekers = element.all(by.repeater('jobseeker in jobseekers'));
-      expect(browser.getTitle()).toEqual('Candidates');
-      expect(jobseekers.first().getText()).toEqual('Paul');
-    });
-  });
+  // describe('Creating jobs', function() {
+  //
+  //   var addJobButton = element(by.id('addJob'));
+  //   var submitButton = element(by.id('addJobSubmit'));
+  //   var jobFieldValues = {
+  //     'jobTitle': 'nandos chef',
+  //     'jobDescription': 'cooking chicken that is extra cheeky',
+  //     'startDate': '16/9/2015',
+  //     'duration': '3 months',
+  //     'hours': '40',
+  //     'location': 'London',
+  //     'wage': '10',
+  //     'requiredSkills': 'cooking'
+  //   };
+  //
+  //   var fillInJobFieldsHelper = function() {
+  //     for (var inputField in jobFieldValues) {
+  //       if (jobFieldValues.hasOwnProperty(inputField)) {
+  //         element(by.model(inputField)).sendKeys(jobFieldValues[inputField]);
+  //       }
+  //     }
+  //   };
+  //
+  //   it("has an 'add job' button", function() {
+  //     addJobButton.click();
+  //     expect(browser.getCurrentUrl()).toContain('/job/new');
+  //   });
+  //
+  //   it("allows jobs to be created and is viewed on /jobs", function() {
+  //     addJobButton.click();
+  //     fillInJobFieldsHelper();
+  //     submitButton.click();
+  //     expect(mock.requestsMade()).toEqual([ { method : 'GET', url : 'http://tranquil-peak-9751.herokuapp.com/api/jobs' }, { method : 'GET', url : 'http://tranquil-peak-9751.herokuapp.com/api/jobs' }, { data : { duration : '3 months', hours : '40', description : 'cooking chicken that is extra cheeky', location : 'London', title : 'nandos chef', start_date : '16/9/2015', wage : '10' }, method : 'POST', url : 'http://tranquil-peak-9751.herokuapp.com/api/jobs' } ]);
+  //     expect(browser.getCurrentUrl()).toBe('http://localhost:8100/#/jobs');
+  //     expect(jobs.last().getText()).toContain('nandos chef');
+  //   });
+  // });
+  //
+  // describe('Viewing more info on a job', function() {
+  //   it("shows a job's extra information", function() {
+  //     jobs.last().click();
+  //     expect(browser.getTitle()).toEqual('More Info');
+  //   });
+  // });
+  //
+  // describe('Viewing candidates', function() {
+  //   it('displays job-seekers', function() {
+  //     jobs.last().click();
+  //     element(by.id('viewCandidates')).click();
+  //     var jobseekers = element.all(by.repeater('jobseeker in jobseekers'));
+  //     expect(browser.getTitle()).toEqual('Candidates');
+  //     expect(jobseekers.first().getText()).toEqual('Paul');
+  //   });
+  // });
 
 });
