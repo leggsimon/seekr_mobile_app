@@ -31,7 +31,7 @@ seekr.config(function ($stateProvider, $urlRouterProvider) {
     });
 
   $stateProvider.state('newJob', {
-      url: '/jobs/new',
+      url: '/job/new',
       templateUrl: 'templates/newJob.html'
     });
 

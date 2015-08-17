@@ -7,28 +7,28 @@
   <ion-content class="padding">
     <form ng-submit="newJob()" class="list" ng-controller="jobsCtrl">
       <label class="item item-input">
-        <input type="text" placeholder="Job Title" ng-model="jobTitle">
+        <input type="text" placeholder="Job Title" ng-model="jobTitle" required>
       </label>
       <label class="item item-input">
-        <textarea placeholder="Job Description" ng-model="jobDescription"></textarea>
+        <textarea placeholder="Job Description" ng-model="jobDescription" required></textarea>
       </label>
       <label class="item item-input">
-        <input type="text" placeholder="Start Date" ng-model="startDate">
+        <input type="text" placeholder="Start Date (format: DD/MM/YYYY)" ng-model="startDate" required>
       </label>
       <label class="item item-input">
-        <input type="text" placeholder="Duration" ng-model="duration">
+        <input type="text" placeholder="Duration (eg. 1 week)" ng-model="duration" required>
       </label>
       <label class="item item-input">
-        <input type="text" placeholder="Hours" ng-model="hours">
+        <input type="text" placeholder="Hours/day" ng-model="hours" required>
       </label>
       <label class="item item-input">
-        <input type="text" placeholder="Location" ng-model="location">
+        <input type="text" placeholder="Location" ng-model="location" required>
       </label>
       <label class="item item-input">
-        <input type="text" placeholder="Wage" ng-model="wage">
+        <input type="text" placeholder="Wage" ng-model="wage" required>
       </label>
       <label class="item item-input">
-        <input type="text" placeholder="Required Skills" ng-model="requiredSkills">
+        <input type="text" placeholder="Required Skills" ng-model="requiredSkills" required>
       </label>
       <button id="addJobSubmit" type="submit" class="button button-positive button-block">Add Job</button>
     </form>
