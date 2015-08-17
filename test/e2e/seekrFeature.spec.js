@@ -1,9 +1,39 @@
+var mock = require('protractor-http-mock');
+
 describe('Seekr', function() {
 
   var jobs = element.all(by.repeater('job in jobs'));
 
 
   beforeEach(function() {
+    mock([{
+      request: {
+        path: 'http://tranquil-peak-9751.herokuapp.com/api/jobs',
+        method: 'GET'
+      },
+      response: {
+        data: [{
+          id: 1,
+          title: "nandos chef",
+          description: "cooking chicken that is extra cheeky",
+          start_date: "2015-09-16",
+          duration: "3 months",
+          hours: "40",
+          location: "London",
+          wage: "10.0"
+        }]
+      }
+    },
+    {
+      request: {
+        path: 'http://tranquil-peak-9751.herokuapp.com/api/jobs',
+        method: 'POST'
+      },
+      response: {
+        status: 200
+      }
+    }]);
+
     browser.get('http://localhost:8100');
   });
 
@@ -11,7 +41,7 @@ describe('Seekr', function() {
     expect(browser.getTitle()).toEqual('Jobs');
   });
 
-  describe('Creating jobs', function () {
+  describe('Creating jobs', function() {
 
     var addJobButton = element(by.id('addJob'));
     var submitButton = element(by.id('addJobSubmit'));
@@ -39,21 +69,18 @@ describe('Seekr', function() {
       expect(browser.getCurrentUrl()).toContain('/jobs/new');
     });
 
-    it("allows job fields to be filled in", function() {
+    it("allows jobs to be created and is viewed on /jobs", function() {
       addJobButton.click();
       fillInJobFieldsHelper();
-      expect(browser.getTitle()).toEqual('newJob');
+      submitButton.click();
+      expect(mock.requestsMade()).toEqual([ { method : 'GET', url : 'http://tranquil-peak-9751.herokuapp.com/api/jobs' }, { method : 'GET', url : 'http://tranquil-peak-9751.herokuapp.com/api/jobs' }, { data : { duration : '3 months', hours : '40', description : 'cooking chicken that is extra cheeky', location : 'London', title : 'nandos chef', start_date : '16/9/2015', wage : '10' }, method : 'POST', url : 'http://tranquil-peak-9751.herokuapp.com/api/jobs' } ]);
+      expect(browser.getCurrentUrl()).toBe('http://localhost:8100/#/jobs');
+      expect(jobs.last().getText()).toContain('nandos chef');
     });
-
-    it("creating a job has a submit button", function() {
-      addJobButton.click();
-      expect(element(by.id('addJobSubmit')).getText()).toEqual('Add Job');
-    });
-
   });
 
   describe('Viewing more info on a job', function() {
-    it("shows a job's extra information", function () {
+    it("shows a job's extra information", function() {
       jobs.last().click();
       expect(browser.getTitle()).toEqual('More Info');
     });
@@ -63,7 +90,9 @@ describe('Seekr', function() {
     it('displays job-seekers', function() {
       jobs.last().click();
       element(by.id('viewCandidates')).click();
+      var jobseekers = element.all(by.repeater('jobseeker in jobseekers'));
       expect(browser.getTitle()).toEqual('Candidates');
+      expect(jobseekers.first().getText()).toEqual('Paul');
     });
   });
 
