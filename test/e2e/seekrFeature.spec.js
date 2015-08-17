@@ -66,7 +66,7 @@ describe('Seekr', function() {
 
     it("has an 'add job' button", function() {
       addJobButton.click();
-      expect(browser.getCurrentUrl()).toContain('/jobs/new');
+      expect(browser.getCurrentUrl()).toContain('/job/new');
     });
 
     it("allows jobs to be created and is viewed on /jobs", function() {
