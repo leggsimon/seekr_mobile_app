@@ -1,19 +1,30 @@
-<ion-view title="Sign Up">
+<ion-view title="Employer Sign Up">
   <ion-nav-buttons side="left">
   </ion-nav-buttons>
   <ion-nav-buttons side="right">
   </ion-nav-buttons>
 
   <ion-content class="padding">
-    <form ng-submit="signUp()" class="list" >
+    <form ng-submit="employerSignUp()" class="list">
       <label class="item item-input">
-        <input type="email" placeholder="Email" ng-model="userEmail" required>
+        <input type="text" placeholder="Email" ng-model="employerEmail" required>
       </label>
       <label class="item item-input">
-        <input type="password" placeholder="Password" ng-model="userPassword" required>
+        <input type="password" placeholder="Password" ng-model="employerPassword" required>
       </label>
-
-      <button id="employerSignUp" type="submit" class="button button-positive button-block">Sign Up as an Employer</button>
+      <label class="item item-input">
+        <input type="text" placeholder="Company name" ng-model="employerName" required>
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Company Description" ng-model="employerDescription" required>
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Industry" ng-model="employerIndustry" required>
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Website" ng-model="employerWebsite" required>
+      </label>
+      <button id="employerSignUpSubmit" type="submit" class="button button-positive button-block">Sign up</button>
     </form>
   </ion-content>
 </ion-view>

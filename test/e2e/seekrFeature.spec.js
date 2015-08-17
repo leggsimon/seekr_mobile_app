@@ -44,10 +44,12 @@ describe('Seekr', function() {
   describe('Users', function () {
 
     var employerSignUpValues = {
-      'companyName': 'Nandos',
-      'companyDescription': 'Selling extra cheeky chicken.',
-      'industry': 'Food',
-      'website': 'http://www.nandos.co.uk/'
+      'employerEmail': 'example@nandos.com',
+      'employerPassword': 'cheeky123',
+      'employerName': 'Nandos',
+      'employerDescription': 'Selling extra cheeky chicken.',
+      'employerIndustry': 'Food',
+      'employerWebsite': 'http://www.nandos.co.uk/'
     };
 
     var fillInEmployerSignUpHelper = function() {
@@ -59,16 +61,10 @@ describe('Seekr', function() {
     };
 
     it('can signup as an employer', function () {
-      element(by.id('signUp')).click();
-      element(by.model('userEmail')).sendKeys('example@nandos.com');
-      element(by.model('userPassword')).sendKeys('cheeky123');
       element(by.id('employerSignUp')).click();
-      // fillInEmployerSignUpHelper;
-      element(by.model('companyName')).sendKeys('Nandos');
-      element(by.model('companyDescription')).sendKeys('Selling extra cheeky chicken.');
-      element(by.model('industry')).sendKeys('food');
-      element(by.model('website')).sendKeys('http://www.nandos.co.uk');
-      expect(element(by.id('addJob')).getText()).toEqual('Add New Job');
+      fillInEmployerSignUpHelper;
+      element(by.id('employerSignUpSubmit')).click();
+      expect(browser.getCurrentUrl()).toContain('/jobs');
     });
   });
 
