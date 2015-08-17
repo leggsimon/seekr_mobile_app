@@ -57,7 +57,7 @@ describe('Seekr', function() {
 
     it('can sign in', function() {
       element(by.id('signIn')).click();
-      element(by.model('email')).sendKeys('jack@seeker.com');
+      element(by.model('email')).sendKeys('jack@seekr.com');
       element(by.model('password')).sendKeys('12345');
       expect(browser.getTitle()).toEqual('Welcome Jack');
     });
