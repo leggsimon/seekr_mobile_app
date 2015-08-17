@@ -58,18 +58,16 @@ describe('Seekr', function() {
       }
     };
 
-    it('can signup as an employer', function () {
-      element(by.id('signUp')).click();
-      element(by.model('userEmail')).sendKeys('example@nandos.com');
-      element(by.model('userPassword')).sendKeys('cheeky123');
-      element(by.id('employerSignUp')).click();
-      // fillInEmployerSignUpHelper;
-      element(by.model('companyName')).sendKeys('Nandos');
-      element(by.model('companyDescription')).sendKeys('Selling extra cheeky chicken.');
-      element(by.model('industry')).sendKeys('food');
-      element(by.model('website')).sendKeys('http://www.nandos.co.uk');
-      expect(element(by.id('addJob')).getText()).toEqual('Add New Job');
+    it('can signup as a jobseeker', function () {
+      element(by.id('jobseekerSignUp')).click();
+      element(by.model('jobseekerName')).sendKeys('Mr Cheeky');
+      element(by.model('jobseekerEmail')).sendKeys('example@nandos.com');
+      element(by.model('jobseekerPassword')).sendKeys('cheeky123');
+      element(by.model('jobseekerLocation')).sendKeys('cheeky town');
+      element(by.id('jobseekerSignUp')).click();
+      expect(browser.getTitle()).toEqual("Welcome Mr Cheeky");
     });
+
   });
 
   // describe('Creating jobs', function() {
