@@ -44,10 +44,12 @@ describe('Seekr', function() {
   describe('Users', function () {
 
     var employerSignUpValues = {
-      'companyName': 'Nandos',
-      'companyDescription': 'Selling extra cheeky chicken.',
-      'industry': 'Food',
-      'website': 'http://www.nandos.co.uk/'
+      'employerEmail': 'example@nandos.com',
+      'employerPassword': 'cheeky123',
+      'employerName': 'Nandos',
+      'employerDescription': 'Selling extra cheeky chicken.',
+      'employerIndustry': 'Food',
+      'employerWebsite': 'http://www.nandos.co.uk/'
     };
 
     var fillInEmployerSignUpHelper = function() {
@@ -66,6 +68,12 @@ describe('Seekr', function() {
       element(by.model('jobseekerLocation')).sendKeys('cheeky town');
       element(by.id('jobseekerSignUp')).click();
       expect(browser.getTitle()).toEqual("Welcome Mr Cheeky");
+
+    it('can signup as an employer', function () {
+      element(by.id('employerSignUp')).click();
+      fillInEmployerSignUpHelper();
+      element(by.id('employerSignUpSubmit')).click();
+      expect(browser.getCurrentUrl()).toContain('/jobs');
     });
 
   });
