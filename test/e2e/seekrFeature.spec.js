@@ -8,7 +8,38 @@ describe('Seekr', function() {
   });
 
   it('has a title', function() {
-    expect(browser.getTitle()).toEqual('Jobs');
+    expect(browser.getTitle()).toEqual('Home');
+  });
+
+  describe('Users', function () {
+
+    var employerSignUpValues = {
+      'companyName': 'Nandos',
+      'companyDescription': 'Selling extra cheeky chicken.',
+      'industry': 'Food',
+      'website': 'http://www.nandos.co.uk/'
+    };
+
+    var fillInEmployerSignUpHelper = function() {
+      for (var inputField in employerSignUpValues) {
+        if (employerSignUpValues.hasOwnProperty(inputField)) {
+          element(by.model(inputField)).sendKeys(employerSignUpValues[inputField]);
+        }
+      }
+    };
+
+    it('can signup as an employer', function () {
+      element(by.id('signUp')).click();
+      element(by.model('userEmail')).sendKeys('example@nandos.com');
+      element(by.model('userPassword')).sendKeys('cheeky123');
+      element(by.id('employerSignUp')).click();
+      // fillInEmployerSignUpHelper;
+      element(by.model('companyName')).sendKeys('Nandos');
+      element(by.model('companyDescription')).sendKeys('Selling extra cheeky chicken.');
+      element(by.model('industry')).sendKeys('food');
+      element(by.model('website')).sendKeys('http://www.nandos.co.uk');
+      expect(element(by.id('addJob')).getText()).toEqual('Add New Job');
+    });
   });
 
   describe('Creating jobs', function () {
@@ -36,7 +67,7 @@ describe('Seekr', function() {
 
     it("has an 'add job' button", function() {
       addJobButton.click();
-      expect(browser.getCurrentUrl()).toContain('/jobs/new');
+      expect(browser.getCurrentUrl()).toContain('/job/new');
     });
 
     it("allows job fields to be filled in", function() {

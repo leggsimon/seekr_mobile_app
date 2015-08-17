@@ -20,25 +20,35 @@ seekr.run(function($ionicPlatform) {
 
 seekr.config(function ($stateProvider, $urlRouterProvider) {
 
+  $stateProvider.state('home', {
+    url: '/home',
+    templateUrl: 'templates/home.html'
+  });
+
+  $stateProvider.state('signUp', {
+    url: '/signup',
+    templateUrl: 'templates/signUp.html'
+  });
+
   $stateProvider.state('jobs', {
-      url: '/jobs',
-      templateUrl: 'templates/jobs.html'
-    });
+    url: '/jobs',
+    templateUrl: 'templates/jobs.html'
+  });
 
   $stateProvider.state('jobInfo', {
-      url: '/jobs/:id',
-      templateUrl: 'templates/jobInfo.html'
-    });
+    url: '/jobs/:id',
+    templateUrl: 'templates/jobInfo.html'
+  });
 
   $stateProvider.state('newJob', {
-      url: '/job/new',
-      templateUrl: 'templates/newJob.html'
-    });
+    url: '/job/new',
+    templateUrl: 'templates/newJob.html'
+  });
 
   $stateProvider.state('jobCandidates', {
-      url: '/jobseekers',
-      templateUrl: 'templates/jobCandidates.html'
-    });
+    url: '/jobseekers',
+    templateUrl: 'templates/jobCandidates.html'
+  });
 
-  $urlRouterProvider.otherwise('jobs');
+  $urlRouterProvider.otherwise('home');
 });
