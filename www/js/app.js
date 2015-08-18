@@ -67,7 +67,7 @@ seekr.config(function($stateProvider, $urlRouterProvider) {
   });
 
   $stateProvider.state('jobInfo.candidates', {
-    url: '/jobseekers',
+    url: '/jobseekers/:requiredSkills',
     templateUrl: 'templates/jobCandidates.html'
   });
 

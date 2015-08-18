@@ -1,9 +1,9 @@
-seekr.controller('jobCandidatesCtrl', ['$scope', 'Restangular', function($scope, Restangular) {
+seekr.controller('jobCandidatesCtrl', ['$scope', '$stateParams', 'Restangular', function($scope, $stateParams, Restangular) {
   var api = Restangular.all('jobseekers');
 
-
   var jobseekerData = api.getList().then(function(result){
-      $scope.jobseekers = result; });
+      $scope.jobseekers = result;
+  });
 
 
   $scope.addCard = function(i) {
