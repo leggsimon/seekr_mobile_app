@@ -19,7 +19,7 @@ angular.module('starter', ['ionic', 'ionic.contrib.ui.tinderCards'])
   }
 })
 
-.controller('CardsCtrl', function($scope, TDCardDelegate) {
+.controller('jobCandidatesCtrl', function($scope, TDCardDelegate) {
   var cardTypes = [
     { image: 'max.jpg' },
     { image: 'ben.png' },

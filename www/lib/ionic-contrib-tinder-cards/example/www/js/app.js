@@ -12,7 +12,7 @@ angular.module('starter', ['ionic', 'ionic.contrib.ui.tinderCards'])
 
 })
 
-.controller('CardsCtrl', function($scope, TDCardDelegate) {
+.controller('jobCandidatesCtrl', function($scope, TDCardDelegate) {
   console.log('CARDS CTRL');
   var cardTypes = [
     { title: 'Swipe down to clear the card', image: 'img/pic.png' },
