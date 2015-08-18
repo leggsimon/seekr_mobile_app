@@ -1,19 +1,24 @@
-<ion-view title="Candidates" ng-controller="jobCandidatesCtrl">
-  <ion-content overflow-scroll="true" has-bouncing="true">
-    <ion-list>
-      <ion-item ng-repeat="jobseeker in jobseekers">
-        <div class="list card">
+<ion-view title="Candidates">
+  <ion-pane ng-controller="CardsCtrl">
+    <ion-header-bar class="bar-calm">
+      <h1 class="title">Ionic Tinder Cards</h1>
+    </ion-header-bar>
 
-          <div class="item item-avatar">
-            <!-- <img ng-src="{{ company.avatar }}">          put company logo here -->
-            <h2>{{jobseeker.name}}</h2>
-          </div>
-          <!-- <div class="item item-image">                  mabye location here
-            <img src="cover.jpg">
-          </div> -->
-
+    <td-cards>
+      <td-card id="td-card" ng-repeat="card in cards" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)" on-partial-swipe="cardPartialSwipe(amt)">
+        <div class="title">
+          {{card.name}}
         </div>
-      </ion-item>
-    </ion-list>
-  </ion-content>
+        <div class="image">
+          <div class="no-text overlayBox">
+            <div class="noBox boxed">Trash</div>
+          </div>
+          <img ng-src="{{card.imageURL}}">
+          <div class="yes-text overlayBox">
+            <div class="yesBox boxed" id="centerMe">Save</div>
+          </div>
+        </div>
+      </td-card>
+    </td-cards>
+  </ion-pane>
 </ion-view>
