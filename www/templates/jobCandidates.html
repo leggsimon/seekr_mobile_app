@@ -7,13 +7,13 @@
     <td-cards>
       <td-card id="td-card" ng-repeat="card in cards" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)" on-partial-swipe="cardPartialSwipe(amt)">
         <div class="title">
-          {{card.title}}
+          {{card.name}}
         </div>
         <div class="image">
           <div class="no-text overlayBox">
             <div class="noBox boxed">Trash</div>
           </div>
-          <img ng-src="{{card.image}}">
+          <img ng-src="{{card.imageURL}}">
           <div class="yes-text overlayBox">
             <div class="yesBox boxed" id="centerMe">Save</div>
           </div>

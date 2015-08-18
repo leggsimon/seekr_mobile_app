@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var seekr = angular.module('Seekr', ['ionic', 'ngResource', 'ionic.contrib.ui.tinderCards']);
+var seekr = angular.module('Seekr', ['ionic', 'ngResource', 'ionic.contrib.ui.tinderCards', 'restangular']);
 
 seekr.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -29,31 +29,18 @@ seekr.directive('noScroll', function() {
   };
 });
 
-seekr.controller('CardsCtrl', function($scope) {
-  var cardTypes = [{
-    image: 'img/pic2.png',
-    title: 'Paul'
-  }, {
-    image: 'img/pic5.png',
-    title: 'Sanj'
-  }, {
-    image: 'img/pic3.png',
-    title: 'Rob'
-  }, {
-    image: 'img/pic4.png',
-    title: 'Jack'
-  }, {
-    image: '',
-    title: 'Cristian\'s Nan'
-  }, {
-    image: '',
-    title: 'Simon'
-  }, {
-    image: '',
-    title: 'JD'
-  } ];
+seekr.config(function(RestangularProvider) {
+  RestangularProvider.setBaseUrl(
+    'https://tranquil-peak-9751.herokuapp.com/api');
+});
 
-  $scope.cards = [];
+seekr.controller('CardsCtrl', ['$scope', 'Restangular', function($scope, Restangular) {
+  var api = Restangular.all('jobseekers');
+
+
+  var cardTypes = api.getList().then(function(result){
+      $scope.cards = result; });
+
 
   $scope.addCard = function(i) {
     var newCard = cardTypes[Math.floor(Math.random() * cardTypes.length)];
@@ -75,7 +62,7 @@ seekr.controller('CardsCtrl', function($scope) {
     $scope.cards.splice(index, 1);
     console.log('Card removed');
   };
-});
+}]);
 
 
 seekr.config(function($stateProvider, $urlRouterProvider) {
