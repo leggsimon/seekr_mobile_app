@@ -8,16 +8,20 @@
       <td-card id="td-card" ng-repeat="jobseeker in jobseekers" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)" on-partial-swipe="cardPartialSwipe(amt)">
         <div class="title">
           {{jobseeker.name}}
+          {{jobseeker.email}}
+          {{jobseeker.location}}
+          {{jobseeker.skill}}
         </div>
         <div class="image">
           <div class="no-text overlayBox">
-            <div class="noBox boxed">Trash</div>
+            <div class="noBox boxed">Reject</div>
           </div>
           <img ng-src="{{jobseeker.imageURL}}">
           <div class="yes-text overlayBox">
-            <div class="yesBox boxed" id="centerMe">Save</div>
+            <div class="yesBox boxed" id="centerMe">Keep</div>
           </div>
         </div>
+        <button id="offerJob" type="submit" class="button button-positive button-block">Offer</button>
       </td-card>
     </td-cards>
   </ion-pane>
