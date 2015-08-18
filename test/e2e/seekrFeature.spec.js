@@ -114,9 +114,8 @@ describe('Seekr', function() {
       element(by.id('employerSignInSubmit')).click();
       jobs.last().click();
       element(by.id('viewCandidates')).click();
-      var jobseekers = element.all(by.repeater('jobseeker in jobseekers'));
       expect(browser.getTitle()).toEqual('Candidates');
-      expect(jobseekers.first().getText()).toEqual('Paul');
+      expect(element(by.css('img')).isPresent()).toBe(true);
     });
   });
 
