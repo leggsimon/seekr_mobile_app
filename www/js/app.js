@@ -72,24 +72,19 @@ seekr.config(function($stateProvider, $urlRouterProvider) {
     templateUrl: 'templates/home.html'
   });
 
-  $stateProvider.state('signIn', {
-    url: '/signin',
-    templateUrl: 'templates/signIn.html'
-  });
-
   $stateProvider.state('jobseekerHome', {
     url: '/jobseekerhome',
     templateUrl: 'templates/jobseekerHome.html'
   });
 
-  $stateProvider.state('employerSignUp', {
-    url: '/employersignup',
-    templateUrl: 'templates/employerSignUp.html'
+  $stateProvider.state('employerSignIn', {
+    url: '/employersignin',
+    templateUrl: 'templates/employerSignIn.html'
   });
 
-  $stateProvider.state('jobseekerSignUp', {
-    url: '/jobseekersignup',
-    templateUrl: 'templates/jobseekerSignUp.html'
+  $stateProvider.state('jobseekerSignIn', {
+    url: '/jobseekersignin',
+    templateUrl: 'templates/jobseekerSignIn.html'
   });
 
   $stateProvider.state('jobs', {
