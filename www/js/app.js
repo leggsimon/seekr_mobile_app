@@ -71,7 +71,7 @@ seekr.config(function($stateProvider, $urlRouterProvider) {
     templateUrl: 'templates/newJob.html'
   });
 
-  $stateProvider.state('jobCandidates', {
+  $stateProvider.state('jobInfo.candidates', {
     url: '/jobseekers',
     templateUrl: 'templates/jobCandidates.html'
   });

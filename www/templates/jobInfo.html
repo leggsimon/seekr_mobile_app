@@ -10,7 +10,7 @@
         <p><b>Hours:</b> {{ jobInfo.hours }}</p>
         <p><b>Wage:</b> {{ jobInfo.wage | currency:"£" }}</p>
 
-        <button id="viewCandidates" class="button button-block button-positive padding" ui-sref="jobCandidates">View Candidates</button>
+        <a id="viewCandidates" class="button button-block button-positive padding" ui-sref="jobInfo.candidates">View Candidates</a>
 
       </ion-item>
     </ion-list>
