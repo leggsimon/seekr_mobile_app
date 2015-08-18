@@ -1,12 +1,29 @@
-seekr.controller('jobCandidatesCtrl', ['$scope', '$stateParams', '$http', function ($scope, $stateParams, $http) {
+seekr.controller('jobCandidatesCtrl', ['$scope', 'Restangular', function($scope, Restangular) {
+  var api = Restangular.all('jobseekers');
 
-  var url = 'http://tranquil-peak-9751.herokuapp.com/api';
 
-  $http.get(url + '/jobseekers').then(function(resp) {
-    $scope.jobseekers = resp.data;
+  var jobseekerData = api.getList().then(function(result){
+      $scope.jobseekers = result; });
 
-    }, function(err) {
-      console.error('ERR', err); // err.status will contain the status code
-  });
 
+  $scope.addCard = function(i) {
+    var newCard = jobseekerData[Math.floor(Math.random() * jobseekerData.length)];
+    newCard.id = Math.random();
+    $scope.jobseekers.push(angular.extend({}, newCard));
+  };
+
+  for (var i = 0; i < jobseekerData.length; i++) $scope.addCard();
+
+  $scope.cardSwipedLeft = function(index) {
+    console.log('Left swipe');
+  };
+
+  $scope.cardSwipedRight = function(index) {
+    console.log('Right swipe');
+  };
+
+  $scope.cardDestroyed = function(index) {
+    $scope.jobeekers.splice(index, 1);
+    console.log('Card removed');
+  };
 }]);

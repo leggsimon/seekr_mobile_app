@@ -1,0 +1,18 @@
+<ion-view title="Jobseeker Sign In">
+  <ion-nav-buttons side="left">
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+  </ion-nav-buttons>
+
+  <ion-content class="padding">
+    <form ng-submit="jobseekerSignIn()" class="list">
+      <label class="item item-input">
+        <input type="email" placeholder="Email" ng-model="jobseekerEmail" required>
+      </label>
+      <label class="item item-input">
+        <input type="password" placeholder="Password" ng-model="jobseekerPassword" required>
+      </label>
+      <button id="jobseekerSignInSubmit" type="submit" class="button button-positive button-block" ui-sref="jobseekerHome">Sign in as a Jobseeker</button>
+    </form>
+  </ion-content>
+</ion-view>
