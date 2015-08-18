@@ -2,17 +2,17 @@ seekr.controller('jobCandidatesCtrl', ['$scope', 'Restangular', function($scope,
   var api = Restangular.all('jobseekers');
 
 
-  var cardTypes = api.getList().then(function(result){
-      $scope.cards = result; });
+  var jobseekerData = api.getList().then(function(result){
+      $scope.jobseekers = result; });
 
 
   $scope.addCard = function(i) {
-    var newCard = cardTypes[Math.floor(Math.random() * cardTypes.length)];
+    var newCard = jobseekerData[Math.floor(Math.random() * jobseekerData.length)];
     newCard.id = Math.random();
-    $scope.cards.push(angular.extend({}, newCard));
+    $scope.jobseekers.push(angular.extend({}, newCard));
   };
 
-  for (var i = 0; i < cardTypes.length; i++) $scope.addCard();
+  for (var i = 0; i < jobseekerData.length; i++) $scope.addCard();
 
   $scope.cardSwipedLeft = function(index) {
     console.log('Left swipe');
@@ -23,7 +23,7 @@ seekr.controller('jobCandidatesCtrl', ['$scope', 'Restangular', function($scope,
   };
 
   $scope.cardDestroyed = function(index) {
-    $scope.cards.splice(index, 1);
+    $scope.jobeekers.splice(index, 1);
     console.log('Card removed');
   };
 }]);

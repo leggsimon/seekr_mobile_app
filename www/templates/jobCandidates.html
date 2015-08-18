@@ -5,15 +5,15 @@
     </ion-header-bar>
 
     <td-cards>
-      <td-card id="td-card" ng-repeat="card in cards" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)" on-partial-swipe="cardPartialSwipe(amt)">
+      <td-card id="td-card" ng-repeat="jobseeker in jobseekers" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)" on-partial-swipe="cardPartialSwipe(amt)">
         <div class="title">
-          {{card.name}}
+          {{jobseeker.name}}
         </div>
         <div class="image">
           <div class="no-text overlayBox">
             <div class="noBox boxed">Trash</div>
           </div>
-          <img ng-src="{{card.imageURL}}">
+          <img ng-src="{{jobseeker.imageURL}}">
           <div class="yes-text overlayBox">
             <div class="yesBox boxed" id="centerMe">Save</div>
           </div>
