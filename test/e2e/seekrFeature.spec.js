@@ -23,8 +23,7 @@ describe('Seekr', function() {
           wage: "10.0"
         }]
       }
-    },
-    {
+    }, {
       request: {
         path: 'http://tranquil-peak-9751.herokuapp.com/api/jobs',
         method: 'POST'
@@ -41,15 +40,15 @@ describe('Seekr', function() {
     expect(browser.getTitle()).toEqual('Home');
   });
 
-  describe('Users', function () {
+  describe('Users', function() {
 
-    it('can sign in as a jobseeker', function () {
+    it('can sign in as a jobseeker', function() {
       element(by.id('jobseekerSignIn')).click();
       element(by.id('jobseekerSignInSubmit')).click();
       expect(browser.getTitle()).toEqual("Job offers");
     });
 
-    it('can sign in as an employer', function () {
+    it('can sign in as an employer', function() {
       element(by.id('employerSignIn')).click();
       element(by.id('employerSignInSubmit')).click();
       expect(browser.getTitle()).toEqual("Jobs");
@@ -57,7 +56,12 @@ describe('Seekr', function() {
 
   });
 
-  describe('Creating jobs', function() {
+  describe('Employer actions', function() {
+
+    beforeEach(function() {
+      element(by.id('employerSignIn')).click();
+      element(by.id('employerSignInSubmit')).click();
+    });
 
     var addJobButton = element(by.id('addJob'));
     var submitButton = element(by.id('addJobSubmit'));
@@ -80,43 +84,55 @@ describe('Seekr', function() {
       }
     };
 
-    it("has an 'add job' button", function() {
-      element(by.id('employerSignIn')).click();
-      element(by.id('employerSignInSubmit')).click();
+    it("add job button takes you to the add job page", function() {
       addJobButton.click();
       expect(browser.getCurrentUrl()).toContain('/job/new');
     });
 
     it("allows jobs to be created and is viewed on /jobs", function() {
-      element(by.id('employerSignIn')).click();
-      element(by.id('employerSignInSubmit')).click();
       addJobButton.click();
       fillInJobFieldsHelper();
       submitButton.click();
-      expect(mock.requestsMade()).toEqual([ { method : 'GET', url : 'http://tranquil-peak-9751.herokuapp.com/api/jobs' }, { method : 'GET', url : 'http://tranquil-peak-9751.herokuapp.com/api/jobs' }, { method : 'GET', url : 'http://tranquil-peak-9751.herokuapp.com/api/jobs' }, { method : 'GET', url : 'http://tranquil-peak-9751.herokuapp.com/api/jobs' }, { data : { duration : '3 months', hours : '40', description : 'cooking chicken that is extra cheeky', location : 'London', title : 'nandos chef', start_date : '16/9/2015', wage : '10' }, method : 'POST', url : 'http://tranquil-peak-9751.herokuapp.com/api/jobs' } ]);
+      expect(mock.requestsMade()).toEqual([{
+        method: 'GET',
+        url: 'http://tranquil-peak-9751.herokuapp.com/api/jobs'
+      }, {
+        method: 'GET',
+        url: 'http://tranquil-peak-9751.herokuapp.com/api/jobs'
+      }, {
+        method: 'GET',
+        url: 'http://tranquil-peak-9751.herokuapp.com/api/jobs'
+      }, {
+        method: 'GET',
+        url: 'http://tranquil-peak-9751.herokuapp.com/api/jobs'
+      }, {
+        data: {
+          duration: '3 months',
+          hours: '40',
+          description: 'cooking chicken that is extra cheeky',
+          location: 'London',
+          title: 'nandos chef',
+          start_date: '16/9/2015',
+          wage: '10'
+        },
+        method: 'POST',
+        url: 'http://tranquil-peak-9751.herokuapp.com/api/jobs'
+      }]);
       expect(browser.getCurrentUrl()).toBe('http://localhost:8100/#/jobs');
       expect(jobs.last().getText()).toContain('nandos chef');
     });
-  });
 
-  describe('Viewing more info on a job', function() {
     it("shows a job's extra information", function() {
-      element(by.id('employerSignIn')).click();
-      element(by.id('employerSignInSubmit')).click();
       jobs.last().click();
       expect(browser.getTitle()).toEqual('More Info');
     });
-  });
 
-  describe('Viewing candidates', function() {
     it('displays job-seekers', function() {
-      element(by.id('employerSignIn')).click();
-      element(by.id('employerSignInSubmit')).click();
       jobs.last().click();
       element(by.id('viewCandidates')).click();
       expect(browser.getTitle()).toEqual('Candidates');
       expect(element(by.css('img')).isPresent()).toBe(true);
     });
-  });
 
+  });
 });
