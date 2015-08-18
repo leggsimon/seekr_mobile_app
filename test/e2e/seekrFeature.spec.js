@@ -44,14 +44,14 @@ describe('Seekr', function() {
   describe('Users', function () {
 
     it('can sign in as a jobseeker', function () {
-      element(by.id('jobseekerSignUp')).click();
-      element(by.id('jobseekerSignUpSubmit')).click();
+      element(by.id('jobseekerSignIn')).click();
+      element(by.id('jobseekerSignInSubmit')).click();
       expect(browser.getTitle()).toEqual("Job offers");
     });
 
     it('can sign in as an employer', function () {
-      element(by.id('employerSignUp')).click();
-      element(by.id('employerSignUpSubmit')).click();
+      element(by.id('employerSignIn')).click();
+      element(by.id('employerSignInSubmit')).click();
       expect(browser.getTitle()).toEqual("Jobs");
     });
 
@@ -81,15 +81,15 @@ describe('Seekr', function() {
     };
 
     it("has an 'add job' button", function() {
-      element(by.id('employerSignUp')).click();
-      element(by.id('employerSignUpSubmit')).click();
+      element(by.id('employerSignIn')).click();
+      element(by.id('employerSignInSubmit')).click();
       addJobButton.click();
       expect(browser.getCurrentUrl()).toContain('/job/new');
     });
 
     it("allows jobs to be created and is viewed on /jobs", function() {
-      element(by.id('employerSignUp')).click();
-      element(by.id('employerSignUpSubmit')).click();
+      element(by.id('employerSignIn')).click();
+      element(by.id('employerSignInSubmit')).click();
       addJobButton.click();
       fillInJobFieldsHelper();
       submitButton.click();
@@ -101,8 +101,8 @@ describe('Seekr', function() {
 
   describe('Viewing more info on a job', function() {
     it("shows a job's extra information", function() {
-      element(by.id('employerSignUp')).click();
-      element(by.id('employerSignUpSubmit')).click();
+      element(by.id('employerSignIn')).click();
+      element(by.id('employerSignInSubmit')).click();
       jobs.last().click();
       expect(browser.getTitle()).toEqual('More Info');
     });
@@ -110,8 +110,8 @@ describe('Seekr', function() {
 
   describe('Viewing candidates', function() {
     it('displays job-seekers', function() {
-      element(by.id('employerSignUp')).click();
-      element(by.id('employerSignUpSubmit')).click();
+      element(by.id('employerSignIn')).click();
+      element(by.id('employerSignInSubmit')).click();
       jobs.last().click();
       element(by.id('viewCandidates')).click();
       var jobseekers = element.all(by.repeater('jobseeker in jobseekers'));
