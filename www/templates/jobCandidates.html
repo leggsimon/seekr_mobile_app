@@ -1,9 +1,5 @@
 <ion-view title="Candidates">
   <ion-pane ng-controller="jobCandidatesCtrl">
-    <ion-header-bar class="bar-calm">
-      <h1 class="title">Ionic Tinder Cards</h1>
-    </ion-header-bar>
-
     <td-cards>
       <td-card id="td-card" ng-repeat="jobseeker in jobseekers" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)" on-partial-swipe="cardPartialSwipe(amt)">
         <div class="title">
