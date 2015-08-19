@@ -1,7 +1,7 @@
-<ion-view title="Job Offers" hide-back-button="true" ng-controller="jobOfferCtrl">
-  <ion-content overflow-scroll="true" has-bouncing="true">
+<ion-view hide-back-button="true" ng-controller="jobOfferCtrl" title="Job Offers">
+  <ion-content has-bouncing="true" overflow-scroll="true">
     <ion-list>
-      <ion-item ng-repeat="jobOffer in jobOffers">
+<!-- <ion-item ng-repeat="jobOffer in jobOffers">
         <div class="list card">
 
           <a class="item item-avatar" href>
@@ -9,17 +9,55 @@
             <h2>{{jobOffer.title}}</h2>
             <p>{{jobOffer.description}}</p>
           </a>
-          <!-- <div class="item item-image">                  mabye location here
+          <div class="item item-image">                  mabye location here
             <img src="cover.jpg">
-          </div> -->
+          </div>
+
+        </div>
+      </ion-item> -->
+      <ion-item>
+        <div class="list card">
+
+          <div class="item item-avatar">
+            <img src="https://s3-eu-west-1.amazonaws.com/makers-seekr/makersacademylogo.png">
+            <h2>Makers Academy</h2>
+            <p>Receptionist</p>
+          </div>
+
+          <div class="item item-image">
+            <img src="https://maps.googleapis.com/maps/api/staticmap?center=London,E16LT&zoom=15&size=600x600&markers=London,E16LT">
+          </div>
+
+          <a class="item item-icon-left assertive" href="#">
+            <i class="icon ion-checkmark-round"></i>
+            Accept Job
+          </a>
 
         </div>
       </ion-item>
+
+      <ion-item>
+        <div class="list card">
+
+          <div class="item item-avatar">
+            <img src="https://pbs.twimg.com/profile_images/600944658848587777/R6oEVzoc.jpg">
+            <h2>Brewers</h2>
+            <p>Driver</p>
+          </div>
+
+          <div class="item item-image">
+            <img src="https://maps.googleapis.com/maps/api/staticmap?center=London,SE120TD&zoom=15&size=600x600&markers=London,SE120TD">
+          </div>
+
+          <a class="item item-icon-left assertive" href="#">
+            <i class="icon ion-checkmark-round"></i>
+            Accept Job
+          </a>
+
+        </div>
+      </ion-item>
+
     </ion-list>
   </ion-content>
-
-
-
-
 
 </ion-view>
