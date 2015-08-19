@@ -1,6 +1,6 @@
 seekr.controller('jobCandidatesCtrl', ['$scope', '$http', '$stateParams', 'Restangular', function($scope, $http, $stateParams, Restangular) {
-  var api = Restangular.all('jobseekers');
-  var url = 'http://tranquil-peak-9751.herokuapp.com/api';
+  var api = Restangular.all('offers/all');
+  var url = 'http://tranquil-peak-9751.herokuapp.com/api/offers/';
 
   var jobseekerData = api.getList().then(function(result) {
     $scope.jobseekers = result;
@@ -21,9 +21,9 @@ seekr.controller('jobCandidatesCtrl', ['$scope', '$http', '$stateParams', 'Resta
   };
 
   $scope.reject = function(id) {
-    $http.post(url + '/offers', {
+    $http.post(url, {
       'job_id': $scope.jobInfo.id,
-      'job_seeker_id': id,
+      'jobseeker_id': id,
       'accepted': false,
     }).success(function(data, status, headers, config) {
       console.log('Candidate rejected');
@@ -31,9 +31,9 @@ seekr.controller('jobCandidatesCtrl', ['$scope', '$http', '$stateParams', 'Resta
   };
 
   $scope.offer = function(id) {
-    $http.post(url + '/offers', {
+    $http.post(url, {
       'job_id': $scope.jobInfo.id,
-      'job_seeker_id': id,
+      'jobseeker_id': id,
       'accepted': true,
     }).success(function(data, status, headers, config) {
       console.log('Candidate offered');
