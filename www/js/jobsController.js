@@ -22,6 +22,8 @@ seekr.controller('jobsCtrl', ['$scope', '$http', '$location', function($scope, $
         'location': $scope.location,
         'wage': $scope.wage,
         'requiredSkills': $scope.requiredSkills,
+        'contactName': $scope.contactName,
+        'contactEmail': $scope.contactEmail,
       }).success(function(data, status, headers, config) {
         console.log('data inserted succesfully');
       })
@@ -30,5 +32,5 @@ seekr.controller('jobsCtrl', ['$scope', '$http', '$location', function($scope, $
       });
 
   };
-    
+
 }]);
