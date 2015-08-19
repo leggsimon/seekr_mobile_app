@@ -94,29 +94,30 @@ describe('Seekr', function() {
       fillInJobFieldsHelper();
       submitButton.click();
       expect(mock.requestsMade()).toEqual([{
-        method: 'GET',
-        url: 'http://tranquil-peak-9751.herokuapp.com/api/jobs'
+        url: 'http://tranquil-peak-9751.herokuapp.com/api/jobs',
+        method: 'GET'
       }, {
-        method: 'GET',
-        url: 'http://tranquil-peak-9751.herokuapp.com/api/jobs'
+        url: 'http://tranquil-peak-9751.herokuapp.com/api/jobs',
+        method: 'GET'
       }, {
-        method: 'GET',
-        url: 'http://tranquil-peak-9751.herokuapp.com/api/jobs'
+        url: 'http://tranquil-peak-9751.herokuapp.com/api/jobs',
+        method: 'GET'
       }, {
-        method: 'GET',
-        url: 'http://tranquil-peak-9751.herokuapp.com/api/jobs'
+        url: 'http://tranquil-peak-9751.herokuapp.com/api/jobs',
+        method: 'GET'
       }, {
         data: {
           duration: '3 months',
-          hours: '40',
-          description: 'cooking chicken that is extra cheeky',
-          location: 'London',
           title: 'nandos chef',
-          start_date: '16/9/2015',
-          wage: '10'
+          wage: '10',
+          location: 'London',
+          requiredSkills: 'cooking',
+          description: 'cooking chicken that is extra cheeky',
+          hours: '40',
+          start_date: '16/9/2015'
         },
-        method: 'POST',
-        url: 'http://tranquil-peak-9751.herokuapp.com/api/jobs'
+        url: 'http://tranquil-peak-9751.herokuapp.com/api/jobs',
+        method: 'POST'
       }]);
       expect(browser.getCurrentUrl()).toBe('http://localhost:8100/#/jobs');
       expect(jobs.last().getText()).toContain('nandos chef');
