@@ -56,6 +56,11 @@ seekr.config(function($stateProvider, $urlRouterProvider) {
     templateUrl: 'templates/jobseekerSignIn.html'
   });
 
+  $stateProvider.state('employerSignIn', {
+    url: '/employersignin',
+    templateUrl: 'templates/employerSignIn.html'
+  });
+
   $stateProvider.state('jobs', {
     url: '/jobs',
     templateUrl: 'templates/jobs.html'
