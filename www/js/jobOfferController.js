@@ -5,6 +5,8 @@ seekr.controller('jobOfferCtrl', ['$scope', '$stateParams', '$http', function ($
   $http.get(url + '/jobseeker/' + [$stateParams.id] + '/offers').then(function(resp) {
     $scope.jobOffers = resp.data;
 
+    console.log($scope.jobOffers)
+
     }, function(err) {
       console.error('ERR', err); // err.status will contain the status code
   });
