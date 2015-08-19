@@ -2,12 +2,13 @@ seekr.controller('jobsCtrl', ['$scope', '$http', '$location', function($scope, $
 
   var url = 'http://tranquil-peak-9751.herokuapp.com/api';
 
-  $scope.$on('$ionicView.enter', function() {$http.get(url + '/jobs').then(function(resp) {
-    $scope.jobs = resp.data;
+  $scope.$on('$ionicView.enter', function() {
+    $http.get(url + '/jobs').then(function(resp) {
+      $scope.jobs = resp.data;
     }, function(err) {
       console.error('ERR', err); // err.status will contain the status code
+    });
   });
-});
 
   var self = $scope;
 
@@ -19,15 +20,15 @@ seekr.controller('jobsCtrl', ['$scope', '$http', '$location', function($scope, $
         'duration': $scope.duration,
         'hours': $scope.hours,
         'location': $scope.location,
-        'wage': $scope.wage, }).success(function(data, status, headers, config) {
-          console.log('data inserted succesfully');
-        })
-        .then(function() {
-          $location.path('jobs');
-        });
+        'wage': $scope.wage,
+        'requiredSkills': $scope.requiredSkills,
+      }).success(function(data, status, headers, config) {
+        console.log('data inserted succesfully');
+      })
+      .then(function() {
+        $location.path('jobs');
+      });
 
   };
-
-
-
+    
 }]);

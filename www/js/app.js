@@ -46,14 +46,19 @@ seekr.config(function($stateProvider, $urlRouterProvider) {
     templateUrl: 'templates/jobseekerHome.html'
   });
 
-  $stateProvider.state('employerSignIn', {
-    url: '/employersignin',
-    templateUrl: 'templates/employerSignIn.html'
+  $stateProvider.state('jobOffers', {
+    url: '/jobseeker/:id/offers',
+    templateUrl: 'templates/jobOffers.html'
   });
 
   $stateProvider.state('jobseekerSignIn', {
     url: '/jobseekersignin',
     templateUrl: 'templates/jobseekerSignIn.html'
+  });
+
+  $stateProvider.state('employerSignIn', {
+    url: '/employersignin',
+    templateUrl: 'templates/employerSignIn.html'
   });
 
   $stateProvider.state('jobs', {
@@ -66,14 +71,14 @@ seekr.config(function($stateProvider, $urlRouterProvider) {
     templateUrl: 'templates/jobInfo.html'
   });
 
+  $stateProvider.state('jobInfo.candidates', {
+    url: '/jobseekers/:requiredSkills',
+    templateUrl: 'templates/jobCandidates.html'
+  });
+
   $stateProvider.state('newJob', {
     url: '/job/new',
     templateUrl: 'templates/newJob.html'
-  });
-
-  $stateProvider.state('jobCandidates', {
-    url: '/jobseekers',
-    templateUrl: 'templates/jobCandidates.html'
   });
 
   $urlRouterProvider.otherwise('home');
