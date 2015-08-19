@@ -1,5 +1,5 @@
 seekr.controller('jobCandidatesCtrl', ['$scope', '$http', '$stateParams', 'Restangular', function($scope, $http, $stateParams, Restangular) {
-  var api = Restangular.all('offers/all');
+  var api = Restangular.all('offers/all/' + [$stateParams.id]);
   var url = 'http://tranquil-peak-9751.herokuapp.com/api/offers/';
 
   var jobseekerData = api.getList().then(function(result) {
