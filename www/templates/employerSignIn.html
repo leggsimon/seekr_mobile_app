@@ -6,11 +6,13 @@
 
   <ion-content class="padding">
     <form ng-submit="employerSignIn()" class="list">
-      <label class="item item-input">
-        <input type="text" placeholder="Email" ng-model="employerEmail" required>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Email</span>
+        <input type="text" placeholder="example@seekr.com" ng-model="employerEmail" >
       </label>
-      <label class="item item-input">
-        <input type="password" placeholder="Password" ng-model="employerPassword" required>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Password</span>
+        <input type="password" placeholder="*****" ng-model="employerPassword" >
       </label>
       <button id="employerSignInSubmit" type="submit" class="button button-positive button-block" ui-sref="jobs">Sign in</button>
     </form>
