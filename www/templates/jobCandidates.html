@@ -1,7 +1,7 @@
 <ion-view title="Candidates">
   <ion-pane ng-controller="jobCandidatesCtrl">
     <td-cards>
-      <td-card id="td-card" ng-repeat="jobseeker in jobseekers | filter:jobInfo.requiredSkills:jobseeker.PrimarySkill" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)" on-partial-swipe="cardPartialSwipe(amt)">
+      <td-card id="td-card" ng-repeat="jobseeker in jobseekers | filter:jobInfo.requiredSkills:jobseeker.PrimarySkill" on-destroy="cardDestroyed()" on-swipe-left="cardSwipedLeft(jobseeker.id)" on-swipe-right="cardSwipedRight(jobseeker.id)" on-partial-swipe="cardPartialSwipe(amt)">
         <div class="title">
           {{jobseeker.name}}
           {{jobseeker.email}}
@@ -17,7 +17,7 @@
             <div class="yesBox boxed" id="centerMe">Keep</div>
           </div>
         </div>
-        <button id="offerJob" type="submit" class="button button-positive button-block">Offer</button>
+        <button id="offerJob" ng-click="offer(jobseeker.id)" type="submit" class="button button-positive button-block">Offer</button>
       </td-card>
     </td-cards>
   </ion-pane>
