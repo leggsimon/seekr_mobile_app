@@ -16,17 +16,14 @@
             <h2>{{jobOffer.title}}</h2>
             <p>{{jobOffer.description}}</p>
           </a>
-          <button class="item item-image" ng-click="mapToggle()" >
-            <img ng-src="{{ jobOffer.locationmap }}">
-            <div>
-              <p>Wage: {{ jobOffer.wage | currency:"£" }}/hour</p>
-              <p>Hours: {{ jobOffer.hours }}/week</p>
-              <p>Start Date: {{ jobOffer.start_date | date:"EEE dd/MM/yyyy" }} for {{ jobOffer.duration }}</p>
-              <p>Contact: {{ jobOffer.contactName }} at {{ jobOffer.contactEmail }}</p>
-            </div>
-
-          </button>
-
+          <div>
+            <button  back-img="{{ jobOffer.locationmap }}" class="item item-image backImg" ng-click="mapToggle()" >
+                <p>Wage: {{ jobOffer.wage | currency:"£" }}/hour</p>
+                <p>Hours: {{ jobOffer.hours }}/week</p>
+                <p>Start Date: {{ jobOffer.start_date | date:"EEE dd/MM/yyyy" }} for {{ jobOffer.duration }}</p>
+                <p>Contact: {{ jobOffer.contactName }} at {{ jobOffer.contactEmail }}</p>
+            </button>
+          </div>
         </div>
       </ion-item>
     </ion-list>

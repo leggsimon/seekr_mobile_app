@@ -128,3 +128,8 @@ td-card img {
 .ion-plus-round {
   color: #ee473a
 }
+
+.backImg {
+  height: 100vw;
+  width: 100vw;
+}
