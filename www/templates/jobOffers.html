@@ -1,5 +1,12 @@
-<ion-view hide-back-button="true" ng-controller="jobOfferCtrl" title="Job Offers">
-  <ion-content has-bouncing="true" overflow-scroll="true">
+<ion-view title="Job Offers" hide-back-button="true" ng-controller="jobOfferCtrl">
+
+  <ion-nav-buttons side="secondary">
+    <button class="button" ui-sref="home">
+      Sign out
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content overflow-scroll="true" has-bouncing="true">
     <ion-list>
 <ion-item ng-repeat="jobOffer in jobOffers">
         <div class="list card">

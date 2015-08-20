@@ -38,7 +38,7 @@ describe('Seekr', function() {
     browser.get('http://localhost:8100');
   });
 
-  it('has a title', function() {
+  it('has a home page title', function() {
     expect(browser.getTitle()).toEqual('Home');
   });
 
@@ -54,6 +54,14 @@ describe('Seekr', function() {
       element(by.id('employerSignIn')).click();
       element(by.id('employerSignInSubmit')).click();
       expect(browser.getTitle()).toEqual("Jobs");
+    });
+
+    it('has a dummy employer sign up button', function() {
+      expect(element(by.id('employerSignUp')).getText()).toEqual("Sign Up as an Employer");
+    });
+
+    it('has a dummy employer sign up button', function() {
+      expect(element(by.id('jobseekerSignUp')).getText()).toEqual("Sign Up as a Jobseeker");
     });
 
   });
@@ -98,32 +106,34 @@ describe('Seekr', function() {
       fillInJobFieldsHelper();
       submitButton.click();
       expect(mock.requestsMade()).toEqual([{
-        url: 'http://tranquil-peak-9751.herokuapp.com/api/jobs',
-        method: 'GET'
+        method: 'GET',
+        url: 'http://tranquil-peak-9751.herokuapp.com/api/jobs'
       }, {
-        url: 'http://tranquil-peak-9751.herokuapp.com/api/jobs',
-        method: 'GET'
+        method: 'GET',
+        url: 'http://tranquil-peak-9751.herokuapp.com/api/jobs'
       }, {
-        url: 'http://tranquil-peak-9751.herokuapp.com/api/jobs',
-        method: 'GET'
+        method: 'GET',
+        url: 'http://tranquil-peak-9751.herokuapp.com/api/jobs'
       }, {
-        url: 'http://tranquil-peak-9751.herokuapp.com/api/jobs',
-        method: 'GET'
+        method: 'GET',
+        url: 'http://tranquil-peak-9751.herokuapp.com/api/jobs'
       }, {
         data: {
           duration: '3 months',
-          title: 'nandos chef',
-          wage: '10',
+          hours: '40',
           contactEmail: 'steve@nandos.com',
-          location: 'London',
-          requiredSkills: 'cooking',
           contactName: 'Steve',
           description: 'cooking chicken that is extra cheeky',
-          hours: '40',
-          start_date: '16/9/2015'
+          location: 'London',
+          requiredSkills: 'cooking',
+          locationmap: 'https://maps.googleapis.com/maps/api/staticmap?center=London&zoom=15&size=600x600&markers=London',
+          title: 'nandos chef',
+          employer_id: 1,
+          start_date: '16/9/2015',
+          wage: '10'
         },
-        url: 'http://tranquil-peak-9751.herokuapp.com/api/jobs',
-        method: 'POST'
+        method: 'POST',
+        url: 'http://tranquil-peak-9751.herokuapp.com/api/jobs'
       }]);
       expect(browser.getCurrentUrl()).toBe('http://localhost:8100/#/jobs');
       expect(jobs.last().getText()).toContain('nandos chef');
@@ -142,4 +152,15 @@ describe('Seekr', function() {
     });
 
   });
+
+  describe('Jobseeker actions', function() {
+
+    it('takes you to the jobseeker home page after signing in', function() {
+      element(by.id('jobseekerSignIn')).click();
+      element(by.id('jobseekerSignInSubmit')).click();
+      expect(browser.getTitle()).toEqual('Job Offers');
+    });
+
+  });
+
 });

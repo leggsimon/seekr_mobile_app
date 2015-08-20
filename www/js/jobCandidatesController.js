@@ -15,11 +15,6 @@ seekr.controller('jobCandidatesCtrl', ['$scope', '$http', '$stateParams', 'Resta
 
   for (var i = 0; i < jobseekerData.length; i++) $scope.addCard();
 
-  $scope.cardSwipedRight = function(id) {
-    $scope.jobseekers.push(angular.extend({}, id));
-    console.log('Candidate kept');
-  };
-
   $scope.reject = function(id) {
     $http.post(url, {
       'job_id': $scope.jobInfo.id,

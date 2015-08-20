@@ -1,12 +1,18 @@
 <ion-view title="Jobs" hide-back-button="true">
 
+  <ion-nav-buttons side="secondary">
+    <button class="button" ui-sref="home">
+      Sign out
+    </button>
+  </ion-nav-buttons>
+
   <!-- <ion-content class="padding">
-    <button id="addJob" class="button button-block button-positive" ui-sref="newJob">Add New Job</button>
+    <button id="addJob" class="button button-block button-assertive" ui-sref="newJob">Add New Job</button>
   </ion-content> -->
 
   <ion-content overflow-scroll="true" has-bouncing="true">
     <ion-list>
-        <button id="addJob" class="button button-block button-positive padding" ui-sref="newJob">Add New Job</button>
+      <button id="addJob" class="button button-block button-assertive padding" ui-sref="newJob">Add New Job</button>
       <ion-item ng-repeat="job in jobs">
         <div class="list card">
 
