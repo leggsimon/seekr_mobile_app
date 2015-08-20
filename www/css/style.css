@@ -9,8 +9,6 @@ td-card {
     margin: 80px 0 40px -150px;
     width: 300px;
     height: 300px;
-    border: 1px solid #999;
-    box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
     border-radius: 6px;
     background-color: rgb(255,255,255);
 }
@@ -24,13 +22,13 @@ td-card {
 td-card .image {
     position: absolute;
     top: 40px;
-    width: 100%;
+    width: 101%;
 }
 
 td-card img {
     height: 258px;
     width: 100%;
-    border-radius: 6px;
+    border-radius: 2px;
 }
 
 /* Overlay styling*/
