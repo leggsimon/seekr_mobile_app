@@ -80,25 +80,25 @@ td-card img {
 }
 
 #jobseekerSignIn {
-  font-size: 30px;
+  font-size: 24px;
   left: 5%;
 }
 
 #jobseekerSignUp {
-  font-size: 20px;
+  font-size: 15px;
   left: 7%;
 }
 
 #employerSignIn {
-  font-size: 30px;
+  font-size: 24px;
   left: 30%;
-  margin-top: 100px;
+  margin-top: 70px;
 }
 
 #employerSignUp {
-  font-size: 20px;
-  left: 47%;
-  margin-bottom: 125px;
+  font-size: 15px;
+  left: 45%;
+  padding-bottom: 125px;
 }
 
 #jobseekerSignInSubmit {
