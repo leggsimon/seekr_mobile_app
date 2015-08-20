@@ -118,3 +118,13 @@ td-card img {
   margin-top: 15px;
   left: 40%;
 }
+
+#viewCandidates {
+  font-size: 20px;
+  margin-top: 15px;
+  left: 25%;
+}
+
+.ion-plus-round {
+  color: #ee473a
+}
