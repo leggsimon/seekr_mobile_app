@@ -1,7 +1,7 @@
 <ion-view title="Job Offers" hide-back-button="true" ng-controller="jobOfferCtrl">
 
   <ion-nav-buttons side="secondary">
-    <button class="button" ui-sref="home">
+    <button class="button button-clear" ui-sref="home">
       Sign out
     </button>
   </ion-nav-buttons>
@@ -19,18 +19,13 @@
           <button class="item item-image" ng-click="mapToggle()" >
             <img ng-src="{{ jobOffer.locationmap }}">
             <div>
-              <p>{{ jobOffer.description }}</p>
               <p>Wage: £{{ jobOffer.wage }}/hr</p>
               <p>Hours: {{ jobOffer.hours }}/week</p>
+              <p>Start Date: {{ jobOffer.start_date | date:"EEE dd/MM/yyyy" }} for {{ jobOffer.duration }}</p>
               <p>Contact: {{ jobOffer.contactName }} at {{ jobOffer.contactEmail }}</p>
             </div>
 
           </button>
-
-          <a class="item item-icon-left assertive" href="#">
-            <i class="icon ion-checkmark-round"></i>
-            Accept Job
-          </a>
 
         </div>
       </ion-item>

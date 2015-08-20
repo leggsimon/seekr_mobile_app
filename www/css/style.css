@@ -102,3 +102,15 @@ td-card img {
   left: 47%;
   margin-bottom: 125px;
 }
+
+#jobseekerSignInSubmit {
+  font-size: 30px;
+  margin-top: 15px;
+  left: 35%;
+}
+
+#employerSignInSubmit {
+  font-size: 30px;
+  margin-top: 15px;
+  left: 35%;
+}
