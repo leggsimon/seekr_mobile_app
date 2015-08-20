@@ -24,6 +24,7 @@ seekr.controller('jobsCtrl', ['$scope', '$http', '$location', function($scope, $
         'requiredSkills': $scope.requiredSkills,
         'contactName': $scope.contactName,
         'contactEmail': $scope.contactEmail,
+        'employer_id': 1
       }).success(function(data, status, headers, config) {
         console.log('data inserted succesfully');
       })
