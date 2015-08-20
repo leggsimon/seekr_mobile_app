@@ -80,3 +80,25 @@ td-card img {
     transition: 0.2s opacity linear;
     opacity: 0;
 }
+
+#jobseekerSignIn {
+  font-size: 30px;
+  left: 5%;
+}
+
+#jobseekerSignUp {
+  font-size: 20px;
+  left: 7%;
+}
+
+#employerSignIn {
+  font-size: 30px;
+  left: 30%;
+  margin-top: 100px;
+}
+
+#employerSignUp {
+  font-size: 20px;
+  left: 47%;
+  margin-bottom: 125px;
+}
