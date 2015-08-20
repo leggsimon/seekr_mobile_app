@@ -1,7 +1,7 @@
 <ion-view hide-back-button="true" ng-controller="jobOfferCtrl" title="Job Offers">
   <ion-content has-bouncing="true" overflow-scroll="true">
     <ion-list>
-<!-- <ion-item ng-repeat="jobOffer in jobOffers">
+<ion-item ng-repeat="jobOffer in jobOffers">
         <div class="list card">
 
           <a class="item item-avatar" href>
@@ -9,27 +9,13 @@
             <h2>{{jobOffer.title}}</h2>
             <p>{{jobOffer.description}}</p>
           </a>
-          <div class="item item-image">                  mabye location here
-            <img src="cover.jpg">
-          </div>
-
-        </div>
-      </ion-item> -->
-      <ion-item>
-        <div class="list card">
-
-          <div class="item item-avatar">
-            <img src="https://s3-eu-west-1.amazonaws.com/makers-seekr/makersacademylogo.png">
-            <h2>Makers Academy</h2>
-            <p>Receptionist</p>
-          </div>
-
           <button class="item item-image" ng-click="mapToggle()" >
-            <img src="https://maps.googleapis.com/maps/api/staticmap?center=London,E16LT&zoom=15&size=600x600&markers=London,E16LT">
+            <img ng-src="{{ jobOffer.locationmap }}">
             <div>
-              <p>We need a receptionist</p>
-              <p>Wage: £12/hr</p>
-              <p>Hours/week: 39</p>
+              <p>{{ jobOffer.description }}</p>
+              <p>Wage: £{{ jobOffer.wage }}/hr</p>
+              <p>Hours: {{ jobOffer.hours }}/week</p>
+              <p>Contact: {{ jobOffer.contactName }} at {{ jobOffer.contactEmail }}</p>
             </div>
 
           </button>
@@ -41,33 +27,6 @@
 
         </div>
       </ion-item>
-
-      <ion-item>
-        <div class="list card">
-
-          <div class="item item-avatar">
-            <img src="https://pbs.twimg.com/profile_images/600944658848587777/R6oEVzoc.jpg">
-            <h2>Brewers</h2>
-            <p>Driver</p>
-          </div>
-
-          <div class="item item-image">
-            <!-- <img src="https://maps.googleapis.com/maps/api/staticmap?center=London,SE120TD&zoom=15&size=600x600&markers=London,SE120TD"> -->
-            <div style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=London,SE120TD&zoom=15&size=600x600&markers=London,SE120TD'); -webkit-filter: blur(5px);">
-              <p><b>We need a driver</b></p>
-              <p><b>Wage: £12/hr</b></p>
-              <p><b>Hours/week: 39</b></p>
-            </div>
-          </div>
-
-          <a class="item item-icon-left assertive" href="#">
-            <i class="icon ion-checkmark-round"></i>
-            Accept Job
-          </a>
-
-        </div>
-      </ion-item>
-
     </ion-list>
   </ion-content>
 
