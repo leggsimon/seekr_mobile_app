@@ -1,14 +1,10 @@
 <ion-view title="Jobs" hide-back-button="true">
 
   <ion-nav-buttons side="secondary">
-    <button class="button button-clear" ui-sref="home">
-      Sign out
+    <button class="button button-clear button-assertive" ui-sref="home">
+      sign out
     </button>
   </ion-nav-buttons>
-
-  <!-- <ion-content class="padding">
-    <button id="addJob" class="button button-block button-assertive" ui-sref="newJob">Add New Job</button>
-  </ion-content> -->
 
   <ion-content overflow-scroll="true" has-bouncing="true">
     <ion-list>
@@ -17,7 +13,7 @@
         <div class="list card">
 
           <a class="item item-avatar" ui-sref="jobInfo({id: {{ job.id }} })">
-            <img ng-src="{{ job.imageURL }}"> 
+            <img ng-src="{{ job.imageURL }}">
             <h2>{{job.title}}</h2>
             <p>{{job.description}}</p>
           </a>
