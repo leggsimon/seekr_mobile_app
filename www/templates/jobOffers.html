@@ -8,7 +8,7 @@
 
   <ion-content overflow-scroll="true" has-bouncing="true">
     <ion-list>
-      <ion-item ng-repeat="jobOffer in jobOffers">
+<ion-item ng-repeat="jobOffer in jobOffers">
         <div class="list card">
 
           <a class="item item-avatar" href>
@@ -16,17 +16,25 @@
             <h2>{{jobOffer.title}}</h2>
             <p>{{jobOffer.description}}</p>
           </a>
-          <!-- <div class="item item-image">                  mabye location here
-            <img src="cover.jpg">
-          </div> -->
+          <button class="item item-image" ng-click="mapToggle()" >
+            <img ng-src="{{ jobOffer.locationmap }}">
+            <div>
+              <p>{{ jobOffer.description }}</p>
+              <p>Wage: £{{ jobOffer.wage }}/hr</p>
+              <p>Hours: {{ jobOffer.hours }}/week</p>
+              <p>Contact: {{ jobOffer.contactName }} at {{ jobOffer.contactEmail }}</p>
+            </div>
+
+          </button>
+
+          <a class="item item-icon-left assertive" href="#">
+            <i class="icon ion-checkmark-round"></i>
+            Accept Job
+          </a>
 
         </div>
       </ion-item>
     </ion-list>
   </ion-content>
-
-
-
-
 
 </ion-view>
