@@ -8,7 +8,36 @@
 
   <ion-content overflow-scroll="true" has-bouncing="true">
     <ion-list>
-<ion-item ng-repeat="jobOffer in jobOffers">
+      <ion-item ng-repeat="jobOffer in jobOffers">
+        <div class="list card">
+
+          <a class="item item-avatar" href>
+            <img ng-src="https://s3-eu-west-1.amazonaws.com/makers-seekr/makersacademylogo.png">
+            <h2>Alumni Helper</h2>
+            <p>Stand around and google stuff</p>
+          </a>
+          <div ng-init="displayOverlay = false">
+            <button  back-img="https://maps.googleapis.com/maps/api/staticmap?center=London,E16LT&zoom=15&size=600x600&markers=London,E16LT " class="item item-image backImg" ng-click="displayOverlay = mapToggle(displayOverlay)" >
+              <div id="backImg-infoOverlay">
+              <div id="bg" ng-show="displayOverlay === true">
+                <div id="moreInfo-container">
+                  <div id="moreInfo-bg"></div>
+                  <div id="moreInfo">
+                    <h4><b>Starting:</b> 02/09/2015</h4>
+                    <h4><b>Duration:</b> 6 weeks</h4>
+                    <h4><b>Wage:</b> £16/hour</h4>
+                    <h4><b>Hours:</b> 24/week</h4>
+                    <h4><b>Location:</b> E1 6LT</h4>
+                    <h4><b>Contact Name:</b> Sanj</h4>
+                    <h4><b>Contact Email:</b> sanj@makersacademy.com</h4>
+                  </div>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item ng-repeat="jobOffer in jobOffers">
         <div class="list card">
 
           <a class="item item-avatar" href>
