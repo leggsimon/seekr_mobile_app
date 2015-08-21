@@ -128,3 +128,60 @@ td-card img {
 .ion-plus-round {
   color: #ee473a
 }
+
+.backImg {
+  height: 100vw;
+  width: 100vw;
+
+}
+
+#bg, #moreInfo-bg {
+  background-repeat: no-repeat;
+  background-size: 1080px auto;
+}
+
+#bg {
+  background-position: center top;
+  padding: 70px 90px 120px 90px;
+}
+
+#moreInfo-container {
+  position: relative;
+}
+
+#moreInfo-bg {
+  /* Absolutely position it, but stretch it to all four corners, then put it just behind #moreInfo's z-index */
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: 99;
+
+  /* Pull the background 70px higher to the same place as #bg's */
+  background-position: center -70px;
+
+  -webkit-filter: blur(10px);
+  filter: url('/media/blur.svg#blur');
+  filter: blur(10px);
+}
+
+#moreInfo {
+  /* Put this on top of the blurred layer */
+  position: relative;
+  width: 80%;
+  border-radius: 5px;
+  z-index: 100;
+  padding: 20px;
+  background: rgb(34,34,34); /* for IE */
+  background: rgba(34,34,34,0.75);
+  text-align: left;
+}
+
+@media (max-width: 600px ) {
+  #bg { padding: 10px; }
+  #moreInfo-bg { background-position: center -10px; }
+}
+
+#moreInfo h4, #moreInfo h5, #moreInfo h5 a {color: #fefefe; font-weight: normal; }
+</style>
