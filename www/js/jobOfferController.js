@@ -2,7 +2,12 @@ seekr.controller('jobOfferCtrl', ['$scope', '$stateParams', '$http', function ($
 
   var url = 'http://tranquil-peak-9751.herokuapp.com/api';
 
-  $scope.mapToggle = function() {
+  $scope.mapToggle = function(displayOverlay) {
+    if (displayOverlay) {
+      return false
+    } else {
+      return true
+    }
     console.log('click');
   };
 
