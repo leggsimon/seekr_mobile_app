@@ -1,11 +1,14 @@
 <ion-view title="Candidates" scroll="false">
   <ion-pane ng-controller="jobCandidatesCtrl">
     <td-cards>
-      <td-card id="td-card" ng-repeat="jobseeker in jobseekers | filter:jobInfo.requiredSkills:jobseeker.PrimarySkill" on-destroy="cardDestroyed()" on-swipe-left="reject(jobseeker.id)" on-swipe-right="offer(jobseeker.id)" on-partial-swipe="cardPartialSwipe(amt)">
+      <td-card id="td-card" ng-repeat="jobseeker in jobseekers" on-destroy="cardDestroyed()" on-swipe-left="reject(jobseeker.id)" on-swipe-right="offer(jobseeker.id)" on-partial-swipe="cardPartialSwipe(amt)">
         <div class="title item">
-          <b>{{jobseeker.name}}</b>
-          {{jobseeker.location}}
-          {{jobseeker.skill}}
+          <span class="jobseeker-name"><b>{{jobseeker.name}}</b></span>
+          <span class="jobseeker-location">{{jobseeker.location}}</span>
+        </div>
+
+        <div class="item jobseeker-bio">
+          <span class="">{{ jobseeker.bio }}</span>
         </div>
         <div class="image item">
           <div class="no-text overlayBox">
