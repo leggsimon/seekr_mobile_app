@@ -1,8 +1,8 @@
 <ion-view title="Job Offers" hide-back-button="true" ng-controller="jobOfferCtrl">
 
-  <ion-nav-buttons side="secondary">
-    <button class="button button-clear" ui-sref="home">
-      Sign out
+  <ion-nav-buttons side="primary">
+    <button class="button button-clear button-positive" ui-sref="home">
+      sign out
     </button>
   </ion-nav-buttons>
 
@@ -16,17 +16,31 @@
             <h2>{{jobOffer.title}}</h2>
             <p>{{jobOffer.description}}</p>
           </a>
-          <button class="item item-image" ng-click="mapToggle()" >
-            <img ng-src="{{ jobOffer.locationmap }}">
-            <div>
-              <p>Wage: £{{ jobOffer.wage }}/hr</p>
-              <p>Hours: {{ jobOffer.hours }}/week</p>
-              <p>Start Date: {{ jobOffer.start_date | date:"EEE dd/MM/yyyy" }} for {{ jobOffer.duration }}</p>
-              <p>Contact: {{ jobOffer.contactName }} at {{ jobOffer.contactEmail }}</p>
-            </div>
+          <div ng-init="displayOverlay = false">
+            <button  back-img="{{ jobOffer.locationmap }}" class="item item-image backImg" ng-click="displayOverlay = mapToggle(displayOverlay)" >
+              <div id="backImg-infoOverlay">
+              <!-- <div ng-show="displayOverlay === true" id="infoOverlay">
+                <p>Wage: {{ jobOffer.wage | currency:"£" }}/hour</p>
+                <p>Hours: {{ jobOffer.hours }}/week</p>
+                <p>Start Date: {{ jobOffer.start_date | date:"EEE dd/MM/yyyy" }} for {{ jobOffer.duration }}</p>
+                <p>Contact: {{ jobOffer.contactName }} at {{ jobOffer.contactEmail }}</p>
+              </div> -->
 
-          </button>
-
+              <div id="bg" ng-show="displayOverlay === true">
+                <div id="moreInfo-container">
+                  <div id="moreInfo-bg"></div>
+                  <div id="moreInfo">
+                    <h4><b>Starting:</b> {{ jobOffer.start_date | date:"EEE dd/MM/yyyy" }}</h4> <h4><b>Duration:</b> {{ jobOffer.duration }}</h4>
+                    <h4><b>Wage:</b> {{ jobOffer.wage | currency:"£" }}/hour</h4>
+                    <h4><b>Hours:</b> {{ jobOffer.hours }}/week</h4>
+                    <h4><b>Location:</b> {{ jobOffer.location }}</h4>
+                    <h4><b>Contact Name:</b> {{ jobOffer.contactName }}</h4>
+                    <h4><b>Contact Email:</b> {{ jobOffer.contactEmail }}</h4>
+                  </div>
+                </div>
+              </div>
+            </button>
+          </div>
         </div>
       </ion-item>
     </ion-list>
