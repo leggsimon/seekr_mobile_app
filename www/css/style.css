@@ -21,7 +21,6 @@ td-card {
 
 td-card .image {
     position: absolute;
-    top: 40px;
     width: 101%;
 }
 
@@ -185,3 +184,17 @@ td-card img {
 
 #moreInfo h4, #moreInfo h5, #moreInfo h5 a {color: #fefefe; font-weight: normal; }
 </style>
+
+.jobseeker-name {
+  float: left;
+}
+
+.jobseeker-location {
+  float: right;
+  font-style: italic;
+}
+
+.jobseeker-bio {
+  white-space: normal;
+  font-size: .90em;
+}
