@@ -1,19 +1,25 @@
-<ion-view title="Candidates" ng-controller="jobCandidatesCtrl">
-  <ion-content overflow-scroll="true" has-bouncing="true">
-    <ion-list>
-      <ion-item ng-repeat="jobseeker in jobseekers">
-        <div class="list card">
-
-          <div class="item item-avatar">
-            <!-- <img ng-src="{{ company.avatar }}">          put company logo here -->
-            <h2>{{jobseeker.name}}</h2>
-          </div>
-          <!-- <div class="item item-image">                  mabye location here
-            <img src="cover.jpg">
-          </div> -->
-
+<ion-view title="Candidates" scroll="false">
+  <ion-pane ng-controller="jobCandidatesCtrl">
+    <td-cards>
+      <td-card id="td-card" ng-repeat="jobseeker in jobseekers" on-destroy="cardDestroyed()" on-swipe-left="reject(jobseeker.id)" on-swipe-right="offer(jobseeker.id)" on-partial-swipe="cardPartialSwipe(amt)">
+        <div class="title item">
+          <span class="jobseeker-name"><b>{{jobseeker.name}}</b></span>
+          <span class="jobseeker-location">{{jobseeker.location}}</span>
         </div>
-      </ion-item>
-    </ion-list>
-  </ion-content>
+
+        <div class="item jobseeker-bio">
+          <span class="">{{ jobseeker.bio }}</span>
+        </div>
+        <div class="image item">
+          <div class="no-text overlayBox">
+            <div class="noBox boxed">Reject</div>
+          </div>
+          <img ng-src="{{jobseeker.imageURL}}">
+          <div class="yes-text overlayBox">
+            <div class="yesBox boxed" id="centerMe">Offer</div>
+          </div>
+        </div>
+      </td-card>
+    </td-cards>
+  </ion-pane>
 </ion-view>

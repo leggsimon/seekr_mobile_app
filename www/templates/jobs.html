@@ -1,17 +1,22 @@
 <ion-view title="Jobs" hide-back-button="true">
 
-  <!-- <ion-content class="padding">
-    <button id="addJob" class="button button-block button-positive" ui-sref="newJob">Add New Job</button>
-  </ion-content> -->
+  <ion-nav-buttons side="primary">
+    <button class="button button-clear button-assertive" ui-sref="home">
+      sign out
+    </button>
+  </ion-nav-buttons>
+
+  <ion-nav-buttons side="secondary">
+    <a class="button button-icon icon ion-plus-round" ui-sref="newJob"></a>
+  </ion-nav-buttons>
 
   <ion-content overflow-scroll="true" has-bouncing="true">
     <ion-list>
-        <button id="addJob" class="button button-block button-positive padding" ui-sref="newJob">Add New Job</button>
       <ion-item ng-repeat="job in jobs">
         <div class="list card">
 
           <a class="item item-avatar" ui-sref="jobInfo({id: {{ job.id }} })">
-            <!-- <img ng-src="{{ company.avatar }}">          put company logo here -->
+            <img ng-src="{{ job.imageURL }}">
             <h2>{{job.title}}</h2>
             <p>{{job.description}}</p>
           </a>

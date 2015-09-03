@@ -1,1 +1,200 @@
 /* Empty. Add your own CSS if you like */
+td-cards {
+    display: block;
+}
+
+td-card {
+    position: absolute;
+    left: 50%;
+    margin: 80px 0 40px -150px;
+    width: 300px;
+    height: 300px;
+    border-radius: 6px;
+    background-color: rgb(255,255,255);
+}
+
+.td-card .title {
+    height: 40px;
+    font-size: 15px;
+    padding: 15px;
+}
+
+td-card .image {
+    position: absolute;
+    width: 101%;
+}
+
+td-card img {
+    height: 258px;
+    width: 100%;
+    border-radius: 2px;
+}
+
+/* Overlay styling*/
+
+.overlayBox {
+    position: absolute;
+    left: 50%;
+    height: 98%;
+    width: 100%;
+    top: -80px;
+    opacity: 0;
+    margin: 80px 0 0 -149px;
+}
+
+.boxed {
+    height: 50px;
+    width: 100px;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 30px;
+}
+
+.yes-text {
+    background-color: rgba(0,256,0,0.2);
+}
+
+.yesBox {
+    margin: 10% 60% 0% 10%;
+    border: 2px solid #00FF00;
+    color: rgb(0, 256, 0);
+    -webkit-transform: rotate(-25deg);
+}
+
+.no-text {
+    background-color: rgba(256,0,0,0.2);
+}
+
+.noBox {
+    margin: 10% 10% 0% 60%;
+    border: 2px solid #FF0000;
+    color: rgb(256, 0, 0);
+    -webkit-transform: rotate(25deg);
+}
+
+.fade {
+    -webkit-transition: 0.2s opacity linear;
+    transition: 0.2s opacity linear;
+    opacity: 0;
+}
+
+#jobseekerSignIn {
+  font-size: 24px;
+  left: 5%;
+}
+
+#jobseekerSignUp {
+  font-size: 15px;
+  left: 7%;
+}
+
+#employerSignIn {
+  font-size: 24px;
+  left: 30%;
+  margin-top: 70px;
+}
+
+#employerSignUp {
+  font-size: 15px;
+  left: 45%;
+  padding-bottom: 125px;
+}
+
+#jobseekerSignInSubmit {
+  font-size: 20px;
+  margin-top: 15px;
+  left: 40%;
+}
+
+#employerSignInSubmit {
+  font-size: 20px;
+  margin-top: 15px;
+  left: 40%;
+}
+
+#addJobSubmit {
+  font-size: 20px;
+  margin-top: 15px;
+  left: 40%;
+}
+
+#viewCandidates {
+  font-size: 20px;
+  margin-top: 15px;
+  left: 25%;
+}
+
+.ion-plus-round {
+  color: #ee473a
+}
+
+.backImg {
+  height: 100vw;
+  width: 100vw;
+
+}
+
+#bg, #moreInfo-bg {
+  background-repeat: no-repeat;
+  background-size: 1080px auto;
+}
+
+#bg {
+  background-position: center top;
+  padding: 70px 90px 120px 90px;
+}
+
+#moreInfo-container {
+  position: relative;
+}
+
+#moreInfo-bg {
+  /* Absolutely position it, but stretch it to all four corners, then put it just behind #moreInfo's z-index */
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: 99;
+
+  /* Pull the background 70px higher to the same place as #bg's */
+  background-position: center -70px;
+
+  -webkit-filter: blur(10px);
+  filter: url('/media/blur.svg#blur');
+  filter: blur(10px);
+}
+
+#moreInfo {
+  /* Put this on top of the blurred layer */
+  position: relative;
+  width: 80%;
+  border-radius: 5px;
+  z-index: 100;
+  padding: 20px;
+  background: rgb(34,34,34); /* for IE */
+  background: rgba(34,34,34,0.75);
+  text-align: left;
+}
+
+@media (max-width: 600px ) {
+  #bg { padding: 10px; }
+  #moreInfo-bg { background-position: center -10px; }
+}
+
+#moreInfo h4, #moreInfo h5, #moreInfo h5 a {color: #fefefe; font-weight: normal; }
+</style>
+
+.jobseeker-name {
+  float: left;
+}
+
+.jobseeker-location {
+  float: right;
+  font-style: italic;
+}
+
+.jobseeker-bio {
+  white-space: normal;
+  font-size: .90em;
+}

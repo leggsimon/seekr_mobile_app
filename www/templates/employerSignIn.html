@@ -1,0 +1,20 @@
+<ion-view title="Employer Sign In">
+  <ion-nav-buttons side="left">
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+  </ion-nav-buttons>
+
+  <ion-content class="padding">
+    <form ng-submit="employerSignIn()" class="list">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Email</span>
+        <input type="text" placeholder="example@seekr.com" ng-model="employerEmail" >
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Password</span>
+        <input type="password" placeholder="*****" ng-model="employerPassword" >
+      </label>
+      <button id="employerSignInSubmit" type="submit" class="button button-assertive button-clear" ui-sref="jobs">sign in</button>
+    </form>
+  </ion-content>
+</ion-view>

@@ -1,4 +1,4 @@
-<ion-view title="newJob">
+<ion-view title="New Job">
   <ion-nav-buttons side="left">
   </ion-nav-buttons>
   <ion-nav-buttons side="right">
@@ -6,31 +6,48 @@
 
   <ion-content class="padding">
     <form ng-submit="newJob()" class="list" ng-controller="jobsCtrl">
-      <label class="item item-input">
-        <input type="text" placeholder="Job Title" ng-model="jobTitle">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Job Title</span>
+        <input type="text" placeholder="Van Driver" ng-model="jobTitle" required>
       </label>
-      <label class="item item-input">
-        <textarea placeholder="Job Description" ng-model="jobDescription"></textarea>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Job Description</span>
+        <textarea placeholder="Multi-drop deliveries of stationery" ng-model="jobDescription" required></textarea>
       </label>
-      <label class="item item-input">
-        <input type="text" placeholder="Start Date" ng-model="startDate">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Start Date</span>
+        <input type="text" placeholder="dd/mm/yyyy" ng-model="startDate" required>
       </label>
-      <label class="item item-input">
-        <input type="text" placeholder="Duration" ng-model="duration">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Duration</span>
+        <input type="text" placeholder="1 week" ng-model="duration" required>
       </label>
-      <label class="item item-input">
-        <input type="text" placeholder="Hours" ng-model="hours">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Hours/week</span>
+        <input type="text" placeholder="39" ng-model="hours" required>
       </label>
-      <label class="item item-input">
-        <input type="text" placeholder="Location" ng-model="location">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Location</span>
+        <input type="text" placeholder="SE London" ng-model="location" required>
       </label>
-      <label class="item item-input">
-        <input type="text" placeholder="Wage" ng-model="wage">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Wage/hour</span>
+        <input type="text" placeholder="£8.50" ng-model="wage" required>
       </label>
-      <label class="item item-input">
-        <input type="text" placeholder="Required Skills" ng-model="requiredSkills">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Required Skills</span>
+        <input type="text" placeholder="Driving Customer Service" ng-model="requiredSkills" required>
       </label>
-      <button id="addJobSubmit" type="submit" class="button button-positive button-block">Add Job</button>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Contact Name</span>
+        <input type="text" placeholder="John Smith" ng-model="contactName" required>
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Contact Email</span>
+        <input type="text" placeholder="john@example.com" ng-model="contactEmail" required>
+      </label>
+
+      <button id="addJobSubmit" type="submit" class="button button-assertive button-clear">add job</button>
     </form>
 
   </ion-content>

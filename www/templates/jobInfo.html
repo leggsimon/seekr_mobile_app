@@ -1,5 +1,5 @@
 <ion-view title="More Info" ng-controller="jobInfoCtrl">
-  <ion-content>
+  <ion-content >
     <ion-list>
       <ion-item>
 
@@ -9,8 +9,28 @@
         <p><b>Start Date:</b> {{ jobInfo.start_date | date:"EEE dd/MM/yyyy" }} for {{ jobInfo.duration }}</p>
         <p><b>Hours:</b> {{ jobInfo.hours }}</p>
         <p><b>Wage:</b> {{ jobInfo.wage | currency:"£" }}</p>
+        <p><b>Required Skills:</b> {{ jobInfo.requiredSkills }}</p>
 
-        <button id="viewCandidates" class="button button-block button-positive padding" ui-sref="jobCandidates">View Candidates</button>
+        <a id="viewCandidates" class="button button-clear button-assertive padding" ui-sref="jobInfo.candidates">view candidates</a>
+
+        <div ui-view></div>
+
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
 
       </ion-item>
     </ion-list>
