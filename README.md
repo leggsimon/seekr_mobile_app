@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/leggsimon/seekr_mobile_app/badges/gpa.svg)](https://codeclimate.com/github/leggsimon/seekr_mobile_app)
+
 # Seekr
 
 * [Week plan](#week-plan)
