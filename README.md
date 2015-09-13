@@ -2,93 +2,42 @@
 
 # Seekr
 
-* [Week plan](#week-plan)
-* [Technologies](#technologies)
-* [Features](#features)
-  * [Jobseeker Side](#jobseeker-side)
-  * [Employer Side](#employer-side)
-* [User Stories](#user-stories)
-  * [MVP 1](#mvp-1)
-  * [MVP 2](#mvp-2)
+- [Team](#team)
+- [Approach](#approach)
+- [Technologies Used](#technologies-used)
+- [Challenges](#challenges)
+- [User Stories](#user-stories)
+  - [MVP 1](#mvp-1)
+  - [MVP 2](#mvp-2)
+- [Future Features](#future-features)
 
+## Team
 
+- [Simon Legg](https://github.com/leggsimon)
+- [Jack Hall-Tipping](https://github.com/jackhalltipping)
+- [Paul Harker](https://github.com/Harxy)
+- [Robert Morgan](https://github.com/kfcrobbie)
 
+## Approach
 
-## Week Plan
+Seekr was a 2 week final project at Makers Academy pitched to us as a 'Tinder for recruitment firms' app. After some discussion with the team, we decided that it shouldn't be 'Tinder for recruitment firms', it should be 'Tinder for recruiting'.  
+The success of Tinder, whether you agree with the premise or not, is on it's ease of use for two parties to meet each other. Why shouldn't finding employment or an employee be that easy? After we decided that that was going to be our app, we needed to work out how it was going to be interacted with. We decided that a mobile app would be the best choice considering it's portability and constant availability.
 
-#### Day 1-3
-  * Planning
-  * Research
-  * Trello
-  * What technologies?
-  * Prototype - not testing is ok, destroy it at the end
-  * Cutting features
+We decided that the best use of this app would be for entry-level, temporary employment where there is a need to fill a role in a short amount of time.
 
-#### Day 4
-  * User stories
-  * Feature tests
-  * Unit tests
-  * Refactor
-  * Git workflow
-  * Deploy!
+**This repository is purely the front-end. It is designed to communicate directly with our back-end API. Which can be found [here](https://github.com/Harxy/seekr_api).**
 
-#### Day 5
-  * Retrospective, finished mvp 1
+## Technologies Used
+ * [Angular.js](https://angularjs.org/)
+ * [Ionic Framework](http://ionicframework.com/)
+ * [Protractor Testing Framework](https://angular.github.io/protractor/#/)
+ * [Google Static Maps API](https://developers.google.com/maps/documentation/static-maps/intro)
 
-#### Day 6-7
-  * Weekend, individual work to get started on rest of the features, remote pairing
+## Challenges
 
-#### Day 8
-  * Sprint kickoff, meeting to look at existing tickets
+Time constraints were a large challenge in this project, forcing us to cut features that we would've loved to implement.
 
-#### Day 10
-  * Feature freeze
-
-#### Day 11-12
-  * Practice demos, polish off project, and practice for presentation
-
-
-## Technologies
- * Rails API
- * PSQL
- * Angular
- * Ionic
- * Protractor
- * Rack test
-
-## Features
-
-  * Emphasis on employer side usage
-  * Temp jobs
-  * Low skilled
-  * Focus on speed
-  * Skill keywords
-  * Recommendations/Endorsments form companies
-
-
-#### Jobseeker side
-  * Sign up as job seeker
-    * Email
-    * Full Name
-    * Photo
-    * Key skills tags - dropdown (autocomplete)
-  * Endorsements (not at sign up)
-  * See a list of employers that want to hire you
-
-
-#### Employer side
-  * Sign up as company
-    * Company name, description & logo
-    * Industry
-    * Link to site
-  * Can post a job with:
-    * Job title & description
-    * Start date, End date, duration
-    * Location
-    * Wage/hour
-    * Key skills you want
-  * Can endorse someone who has worked with them
-  * Sees all candidates suitable for the job or people previously endorsed by them
+We also started with the intention of learning a completely new technology in [Swift](https://developer.apple.com/swift/), in order to make this a native application. However after 3 days of trying to get to grips with it (not to mention the time downloading Xcode!!) we recognised it was going to be too much of a challenge to implement it in this project while being able to present a usable app to our 'client' the next week. This was somewhat disappointing for us but a good learning curve for the future when selecting technologies.
 
 ## User Stories
 
@@ -163,3 +112,8 @@ When signed in as a job-seeker,
 I want to be able to be endorsed by a company I have worked for,
 so that future employers can see my skills.
 ```
+
+## Future Features
+
+  * Being able to endorse employees for the work the had done for you, similar to LinkedIn endorsements
+  * Add location data for employees showing distance from the job.
